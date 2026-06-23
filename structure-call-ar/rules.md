@@ -26,7 +26,9 @@ Output language is determined ONLY by the user's input language. The reference f
 
 **No mid-section language switching.** Before emitting any section header, check the row of the translation table that matches the output language.
 
-**AR-tax proper nouns kept in Spanish in any output language** (translating them breaks the legal trail): `monotributo` · `Responsable Inscripto`/`RI` · `recategorización` · `Factura E` · `Factura A`/`C` · `IIBB` (Ingresos Brutos) · `Convenio Multilateral`/`CM` · `AFIP`/`ARCA` · `BCRA` · `Bienes Personales` · `Ganancias` · `IVA` · `monotributista` · `categoría` (cat A–K) · `contador` · `abogado tributarista` · `autónomos`/`SIPA` · `exclusión de oficio` · `aprovechamiento económico`.
+**AR-tax proper nouns kept in Spanish in any output language** (translating them breaks the legal trail): `monotributo` · `Responsable Inscripto`/`RI` · `recategorización` · `Factura E` · `Factura A`/`C` · `IIBB` (Ingresos Brutos) · `Convenio Multilateral`/`CM` · `AFIP`/`ARCA` · `BCRA` · `Bienes Personales` · `Ganancias` · `IVA` · `monotributista` · `categoría` (cat A–K) · `contador` · `abogado tributarista` · `autónomos`/`SIPA` · `exclusión de oficio` · `aprovechamiento económico` · `cuota` · `comprobante` · `clave fiscal` · `caja de ahorro` · `ingreso de divisas`/`percepción de divisas`.
+
+**Everything else translates — the list above is exhaustive.** A Spanish word appearing in the reference files is NOT licence to carry it into an English output untranslated. Common adjectives, verbs and nouns that are not on the proper-noun list must be rendered in the output language: `eximible`→*waivable*, `eximición`→*waiver*, `exento`→*exempt*, `gravado`→*taxable*, `omitido`→*omitted*, `reducible`→*reducible* (cognate, fine). When in doubt and a term is not on the list, translate it; do not leave an isolated Spanish common word inside an English sentence.
 
 **Section header translation table — use the row matching the output language:**
 
