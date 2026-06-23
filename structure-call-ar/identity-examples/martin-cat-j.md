@@ -1,6 +1,6 @@
 # identity-example — Martín, el dev cat J que cree que RI es "el próximo nivel"
 
-> Composite — no es un cliente real. Construido sobre el patrón del exportador puro de servicios que factura fuerte, se siente "grande para el monotributo" y confunde la cercanía al tope con una graduación a `Responsable Inscripto`. El usuario de modo TRANSITION.
+> Composite — no es un cliente real. Construido sobre el patrón del exportador puro de servicios que factura fuerte, se siente "grande para el monotributo" y confunde la cercanía al tope con una graduación a `Responsable Inscripto` — sin ver que, con el dólar alto, el techo del régimen en USD ya se le corrió debajo. El usuario de modo TRANSITION.
 
 ## Quién es
 
@@ -8,7 +8,7 @@ Martín, dev backend en CABA. Monotributo, hoy **cat J**. Facturación 100% expo
 
 ## La decisión que tienen entre manos
 
-La pregunta que trae es binaria y la hace con apuro: **"¿me paso a Responsable Inscripto de una vez?"** Cree que ya facturó lo suficiente para que RI sea el paso natural. La decisión real es estructural y plurianual: **¿el monotributo le sigue conviniendo hasta dónde, y cuándo —si alguna vez— ejecuta la salida a RI?** No es "qué canal uso para cobrar los USD" — eso es del routing coach. Es régimen, no canal.
+La pregunta que trae es binaria y la hace con apuro: **"¿me paso a Responsable Inscripto de una vez?"** Cree que es una elección de estatus que le toca. La decisión real es estructural y plurianual, y el marco está dado vuelta: **el monotributo ya lo está expulsando por el tope en pesos —que el dólar alto bajó a USD ~76K— así que la pregunta no es *si* saltar sino *cómo y cuándo* ejecutar la salida con el menor daño.** No es "qué canal uso para cobrar los USD" — eso es del routing coach. Es régimen, no canal.
 
 ## Pilares de voz
 
@@ -24,27 +24,27 @@ La pregunta que trae es binaria y la hace con apuro: **"¿me paso a Responsable 
 
 ## Temas
 
-1. **"Ya soy grande" ≠ "me toca RI".** Su tema central es confundir volumen con régimen. El ángulo estructural: para el exportador puro, monotributo gana hasta cat K; RI es una elección de condiciones específicas, no un escalón.
-2. **Trayectoria contra el tope de cat K.** Lo que de verdad lo trae a la zona RI es el run-rate que sube, no el estatus. El ángulo: proyectar el mes de cruce del tope K es aritmética; decidir el salto es judgment.
-3. **El salto como decisión plurianual.** RI tiene veda de reingreso de 3 años, y la salida voluntaria anticipada le gana a la exclusión de oficio retroactiva. El tema no es "saltar ya", es "planificar el cuándo con el contador".
+1. **"Ya soy grande" ≠ "elijo RI" — el régimen elige por él.** Su tema central es confundir volumen con una graduación voluntaria. El ángulo estructural: para el exportador puro monotributo gana hasta cat K, pero el tope de cat K en pesos, con el dólar a $1.430, equivale a USD ~76K — y él ya está arriba. No elige saltar; lo expulsan.
+2. **El riesgo cambiario como trigger de exclusión.** Lo que de verdad lo saca del régimen no es el crecimiento: es el peso devaluándose, que infla sus ingresos en ARS sin que facture un dólar más. El ángulo: el TC mismo es el trigger, y se computa contra el límite K al BNA del día.
+3. **La salida como decisión plurianual forzada.** RI tiene veda de reingreso de 3 años, y la salida voluntaria anticipada le gana a la exclusión de oficio retroactiva. El tema no es "saltar ya" ni "no saltar": es "planificar el cuándo de una salida que ya no es opcional, con el contador".
 
 ## Postura de decisión
 
-Martín quiere que le confirmen el salto. El specialist **no** se lo confirma — lo cuantifica contra quedarse:
+Martín quiere que le confirmen el salto como un ascenso. El specialist le da vuelta el marco — no es una elección, es una expulsión, y la cuantifica:
 
-- Rolling-12 **$82.800.000,00**, entre tope cat I **$78.479.211,62** y tope cat J **$89.872.640,30** → **cat J hoy**. Headroom vs J **$7.072.640,30** = **92,1%** → 🔴 **ROJO**.
-- Run-rate **$8.050.000,00/mes** y en ascenso. A USD 7.000/mes *plano* el rolling-12 se estabiliza en ~USD 84.000 (**≈$96.600.000,00**) → cat K, **sin** superar su límite (**$108.357.084,05**), o sea sin exclusión. Cruzar el límite exige que el run-rate siga subiendo (>~USD 7.850/mes sostenido). Headroom a K hoy **$25.557.084,05** (al ~76% del límite K).
-- **Costeo:** mono cat K presión **~15,3%** ($16.580.254,80 sobre $108.357.084,05) vs RI exportador puro **>30–35%**. El break-even del salto recién aparece superando sostenidamente **USD 140.000–150.000/año**. Está en USD 72.000.
-- **Veredicto: NO saltes todavía. Recategorizá a cat K ya (cuota $1.381.687,90/mes) y abrí la conversación de RI con tu contador ahora — para planificar, no para saltar.**
-- **Confidence: REQUIRES_PROFESSIONAL** — no porque el trigger sea dudoso (la recat a K es HIGH), sino porque el *cuándo y cómo* de la salida depende de su estructura de gastos real. Esa es la elección compleja.
+- Rolling-12 **$102.960.000,00** (USD 72K × 1.430), ya sobre el tope cat J **$89.872.640,30** → **dentro de cat K hoy**, al **95,0%** del límite **$108.357.084,05**. Headroom al límite **$5.397.084,05** → 🔴 **ROJO**.
+- Run-rate **$10.010.000,00/mes** y en ascenso. Con el dólar a $1.430 el límite de cat K equivale a **USD 75.774/año**; a USD 7.000/mes *plano* el rolling-12 se estabiliza en ~USD 84.000 (**≈$120.120.000,00**) → **supera** el límite K → exclusión del régimen **sin** que el run-rate suba.
+- **Costeo:** mono cat K presión **~15,3%** ($16.580.254,80 sobre $108.357.084,05) vs RI exportador puro **>30–35%**. El break-even del salto recién aparece superando **USD 140.000–150.000/año** — pero es irrelevante: el monotributo lo expulsa a USD ~76K, mucho antes. La pregunta deja de ser "¿conviene RI?" y pasa a "¿cómo salgo con el menor daño?".
+- **Veredicto: el monotributo te expulsa pronto, no es opcional. Recategorizá a cat K ya (cuota $1.381.687,90/mes, Nivel 1) y activá la salida voluntaria al RI con tu contador ahora, antes de la exclusión de oficio retroactiva.**
+- **Confidence: REQUIRES_PROFESSIONAL** — no porque el trigger sea dudoso (la recat a K y la exclusión inminente son HIGH), sino porque el *cuándo y cómo* de la salida depende de su estructura de gastos real. Esa es la elección compleja.
 - **Escalación: Nivel 2 activa** — el paso a RI / salida voluntaria. El specialist prepara el Reviewer Brief; el contador firma.
 
-El error que el specialist le corrige no es de cálculo: es de marco. Martín pide una graduación; recibe una proyección y un freno.
+El error que el specialist le corrige no es de cálculo: es de marco. Martín pide una graduación; recibe la noticia de que el régimen ya lo está echando y un plan de salida.
 
 ## Qué hace distinto el specialist
 
-Con Martín, el specialist **rechaza el "sí, saltá"** que le pide y lo reemplaza por un costeo: pone el ~15,3% al lado del >30–35% y el break-even en USD 140–150K para que el número cierre la discusión, no el estatus. Separa lo determinístico (recat a cat K = aritmética, la hace él) de lo complejo (el salto = judgment, escala a Nivel 2) y no los mezcla. No le dice por qué canal cobrar sus USD — eso es el sibling de routing, y lo aclara. Y le arma el Reviewer Brief para que la reunión con el contador pase de una semana a 20 minutos.
+Con Martín, el specialist **rechaza el marco de "elijo saltar"** y lo reemplaza por el trigger real: el tope de cat K en USD (≈76K) que el dólar a $1.430 le puso debajo, y que su run-rate ya supera. Usa el costeo (~15,3% vs >30–35%, break-even USD 140–150K) no para frenar el salto sino para mostrarle que el break-even no lo salva: lo expulsan antes. Separa lo determinístico (recat a cat K + exclusión inminente = aritmética, la hace él) de lo complejo (el *cuándo/cómo* de la salida = judgment, escala a Nivel 2) y no los mezcla. No le dice por qué canal cobrar sus USD — eso es el sibling de routing, y lo aclara. Y le arma el Reviewer Brief para que la reunión con el contador pase de una semana a 20 minutos.
 
 ## Por qué existe este perfil
 
-*Martín es el caso anti-graduación — la prueba de que el specialist se niega a confirmar un RI por inercia y en cambio cuantifica, separa trigger de elección, y escala la decisión compleja en vez de opinarla. Es el contrapeso de Lucía: mismo rigor, veredicto opuesto (no actúes todavía).*
+*Martín es el caso del riesgo cambiario — la prueba de que el specialist no confirma un RI por inercia ni lo descarta por reflejo: computa el trigger real (el tope K en USD que la devaluación movió), separa trigger de elección, y escala el cuándo/cómo de una salida que ya no es opcional. Es el contrapeso de Lucía: mismo rigor, otra mecánica — los dos cruzan un tope por el dólar, no por crecer.*

@@ -33,7 +33,7 @@ No es estratégica, es de configuración correcta desde el día uno: **¿Factura
 Sofía no necesita un veredicto de tope — necesita determinaciones de setup que le saquen la ansiedad. El specialist se las da comprometidas:
 
 - **Factura E, no C** — el servicio se usa en el exterior (aprovechamiento económico). PV exclusivo de exportación + clave fiscal **nivel 3** + IVA **0% (tasa cero)**.
-- **TC: BNA vendedor para emitir, BNA comprador (≈$1.150) para el tope.** Dos rates, dos propósitos, ambos del día hábil cambiario anterior. Nunca MEP/blue/CCL.
+- **TC: BNA vendedor para emitir, BNA comprador (≈$1.430) para el tope.** Dos rates, dos propósitos, ambos del día hábil cambiario anterior. Nunca MEP/blue/CCL.
 - **IIBB CABA: exenta.** Declara exento en E-SICOL cada mes. El cartel "actividad no registrada" es **falso positivo** — no genera deuda.
 - **Cambiario: 20 días hábiles** desde la acreditación, código **A22**, SWIFT cross-border. Cuidado con rieles locales si algún día cobra por Wise (riesgo de que el banco no lo califique bajo A22).
 - **Confidence: HIGH** — determinaciones determinísticas Nivel 1.

@@ -52,8 +52,8 @@ Paste: *"I'm Lucía, product designer in Buenos Aires, monotributo cat F. Over t
 
 You get (abridged from [examples.md](./examples.md) Example 1):
 
-> **Rolling-12 $34.500.000,00 vs the cat F ceiling $38.642.048,36 = 89,3% → tier 🔴 ROJO.** Your July project ($9.200.000,00–$10.350.000,00) overruns the entire headroom by itself, so the rolling-12 crosses into cat G in **agosto 2026**. One-step F→G — not an RI question.
-> **Verdict: stay in monotributo, recategorize proactively to cat G in the winter window (closes 5-ago-2026).** Your cuota goes $129.045,32 → $197.108,23/mes — that's the price, and it's the cheap outcome. `Bienes Personales`: below the MNI, no obligation.
+> **Rolling-12 $42.900.000,00 (USD 30K × BNA 1.430) is already over the cat F ceiling $38.642.048,36 → inside cat G at 92,8% → tier 🔴 ROJO.** Your July project ($11.440.000,00–$12.870.000,00) then lifts the rolling-12 into cat H. Two-step F→G (already crossed) → G→H — not an RI question.
+> **Verdict: stay in monotributo, recategorize proactively F→G in the winter window (closes 5-ago-2026), then G→H after July.** Your cuota goes $129.045,32 → $197.108,23 → $447.346,93/mes — two clean proactive moves. `Bienes Personales`: below the MNI, no obligation.
 > **Confidence: HIGH** — a deterministic trigger, all six inputs clean. **Escalation:** none active today; it fires only at mixed income or near the cat-K límite.
 
 *(plus the Reviewer Brief for your contador — the same numbers, formatted as the memo you hand across the table.)*
@@ -97,7 +97,7 @@ A generic tax tool would have recited the monotributo table. This one computes t
 
 ### Try these five (each exercises one behavior)
 
-1. **Lucía** (EN) — *"~USD 30K/year on cat F, big project closing in July, am I about to blow past my category?"* → deterministic F→G crossing, Confidence HIGH. (Example 1)
+1. **Lucía** (EN) — *"~USD 30K/year on cat F, big project closing in July, am I about to blow past my category?"* → already over cat F at today's dollar (F→G), July project sets up G→H, Confidence HIGH. (Example 1)
 2. **Martín** (ES) — *"facturo USD 72K, ¿me conviene pasarme a RI de una vez?"* → quantified, NO casual jump, REQUIRES_PROFESSIONAL. (Example 2)
 3. **Sofía** (ES) — *"primera exportación a una agencia de Canadá, ¿Factura E o C?"* → setup determinations, no tope math. (Example 3)
 4. **Tomás** (ES) — pastes a `recat de oficio` notification → hard escalation, the 15-business-day clock, fear calibrated (administrative, not criminal). (Example 4)
@@ -113,7 +113,7 @@ If you want to know which channel to cash your dollars in this month, that's a r
 
 ## Calibration
 
-Calibrated as of **junio 2026** against the `monotributo` table (Feb–Jul 2026), the `Ganancias`/`IVA`-export regime, the BCRA cambiario rules, and provincial `IIBB` law. The full citation list is the single source of truth in [`rules.md`](./rules.md) § Calibration date. ARCA publishes the next table ~15-jul-2026 — figures go stale for categorizations after that, and the folder flags it in the output. USD↔ARS figures use the **BNA comprador** (~$1.150/USD, jun-2026); recompute against the day's rate.
+Calibrated as of **junio 2026** against the `monotributo` table (Feb–Jul 2026), the `Ganancias`/`IVA`-export regime, the BCRA cambiario rules, and provincial `IIBB` law. The full citation list is the single source of truth in [`rules.md`](./rules.md) § Calibration date. ARCA publishes the next table ~15-jul-2026 — figures go stale for categorizations after that, and the folder flags it in the output. USD↔ARS figures use the **BNA comprador** (~$1.430/USD, BNA al 23-jun-2026); recompute against the day's rate.
 
 ---
 

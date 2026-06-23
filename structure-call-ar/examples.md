@@ -1,13 +1,13 @@
 # Examples
 
-Five worked examples covering the three operating modes plus the refusal protocol. Each shows what the operator pastes (input) and exactly what the specialist responds (output). Outputs render here the same way they render in a Claude project chat — `### Section Name` headers map to the `## Section Name` headers specified in `rules.md` (one nesting level deeper because they live inside this examples file). **TC calibration (locked, junio 2026):** the monotributo ceiling converts USD→ARS at the **BNA comprador** del cierre del día hábil cambiario anterior ≈ **$1.150/USD**; emitting a Factura E uses the **BNA vendedor** (slightly higher) — only Example 3 needs that distinction. Every USD↔ARS line is marked *(calibrado jun-2026, recalcular contra el BNA del día)*. ARS figures are quoted verbatim from `reference/` al centavo; the specialist never invents or rounds a peso amount.
+Five worked examples covering the three operating modes plus the refusal protocol. Each shows what the operator pastes (input) and exactly what the specialist responds (output). Outputs render here the same way they render in a Claude project chat — `### Section Name` headers map to the `## Section Name` headers specified in `rules.md` (one nesting level deeper because they live inside this examples file). **TC calibration (locked, junio 2026):** the monotributo ceiling converts USD→ARS at the **BNA comprador** del cierre del día hábil cambiario anterior ≈ **$1.430/USD** (BNA al 23-jun-2026); emitting a Factura E uses the **BNA vendedor** ≈ **$1.480** (slightly higher) — only Example 3 needs that distinction. Every USD↔ARS line is marked *(calibrado jun-2026, recalcular contra el BNA del día)*. ARS figures are quoted verbatim from `reference/` al centavo; the specialist never invents or rounds a peso amount.
 
 **Glosario para el lector no-AR:** `cat A–K` = monotributo category (simplified tax regime, 11 income brackets) · `RI` = Responsable Inscripto (general tax regime) · `Factura E` = export-services invoice · `IIBB` (Ingresos Brutos) = provincial gross-income tax · `contador` = accountant · `recategorización` = the semi-annual move between categories · `exclusión de oficio` = ARCA forcibly ejecting you from monotributo.
 
 | # | Mode | Persona | Language | Highlights |
 |---|------|---------|----------|------------|
-| 1 | STRUCTURE | **Lucía** — designer cat F, USD 30K rolling-12, big project closing July | English | Confidence HIGH, crosses cat F ceiling agosto 2026, recategorize proactively to cat G, Bienes Personales clear |
-| 2 | TRANSITION | **Martín** — dev cat J, USD 72K rolling-12, "¿me conviene RI?" | Español | Confidence REQUIRES_PROFESSIONAL, NO jump yet, recat to cat K, costeo ~15,3% mono vs >30–35% RI |
+| 1 | STRUCTURE | **Lucía** — designer cat F, USD 30K rolling-12, big project closing July | English | Confidence HIGH, rolling-12 already in cat G, recategorize F→G now, July project sets up G→H, Bienes Personales clear |
+| 2 | TRANSITION | **Martín** — dev cat J, USD 72K rolling-12, "¿me conviene RI?" | Español | Confidence REQUIRES_PROFESSIONAL, rolling-12 already in cat K (95%), flat run-rate forces exclusión, plan voluntary exit to RI now |
 | 3 | SETUP-CHECK | **Sofía** — first export, "¿esto es Factura E?" | Español | Confidence HIGH, Factura E by aprovechamiento, BNA vendedor vs comprador, IIBB CABA exenta + E-SICOL falso positivo |
 | 4 | STRUCTURE / hard escalation | **Tomás** — pastes a recat-de-oficio notification | Español | Confidence REQUIRES_PROFESSIONAL, Nivel 2 contador, 15 días hábiles, NO penal alarm, Reviewer Brief |
 | 5 | REFUSAL | Vague "¿me conviene RI?", 4+ of 6 inputs missing | Español (+ mixed-input → ES default variant) | Intake gate triggered, 6-input list, override never lifts escalation |
@@ -32,50 +32,50 @@ Lucía, product designer in CABA. **Régimen:** monotributo (Argentine simplifie
 
 ### Current Structural Position
 
-- **Rolling-12 in ARS:** USD 30,000 × BNA comprador 1.150 = **$34.500.000,00** *(calibrado jun-2026, recalcular contra el BNA del día)*.
-- **Cat F ceiling (ARS):** **$38.642.048,36** (verbatim from the A–K table, máximo de ingresos brutos anuales for cat F, vigente 01/02–31/07/2026) = **USD 33.602** derived *(÷1.150, calibrado jun-2026)*.
-- **Headroom remaining:** $38.642.048,36 − $34.500.000,00 = **$4.142.048,36** (= USD 3.602).
-- **Distance to ceiling:** $34.500.000,00 ÷ $38.642.048,36 = **89,3%** → tier 🔴 **ROJO** (>90% imminent and a projected crossing before the next official recat).
-- **Cat F cuota (servicios):** **$129.045,32/mes** (verbatim).
+- **Rolling-12 in ARS:** USD 30,000 × BNA comprador 1.430 = **$42.900.000,00** *(calibrado jun-2026, recalcular contra el BNA del día)*.
+- **Cat F ceiling (ARS):** **$38.642.048,36** (verbatim from the A–K table, máximo de ingresos brutos anuales for cat F, vigente 01/02–31/07/2026) = **USD 27.022** derived *(÷1.430, calibrado jun-2026)*. **Your rolling-12 has already cleared it** by $4.257.951,64.
+- **Cat G ceiling (ARS):** **$46.211.109,37** (= USD 32.315 derived ÷1.430). Your rolling-12 sits **inside cat G**.
+- **Distance to the cat G ceiling:** $42.900.000,00 ÷ $46.211.109,37 = **92,8%** → tier 🔴 **ROJO** (already over cat F, and >90% of the way to G's ceiling). Headroom to G: **$3.311.109,37** (USD 2.315).
+- **Cuota you pay now (cat F, servicios):** **$129.045,32/mes** (verbatim) — but your rolling-12 already belongs in cat G, so you're under-categorized today.
 - **Factura E + IIBB:** export-services, CABA exempt — confirmed, no separate liability.
 
 ### Projection & Crossing Point
 
 This is the deterministic core — arithmetic from `reference/`, not opinion.
 
-- Headroom today: **$4.142.048,36**.
-- The closing project alone is **$9.200.000,00–$10.350.000,00** (USD 8.000–9.000 × 1.150, *calibrado jun-2026*) — **it overruns the entire headroom by itself**, before counting any other July invoicing.
-- Run-rate: **$4.025.000,00/mes** (USD 3.500 × 1.150). The standing run-rate alone eats the headroom in roughly one month.
-- **Crossing month: agosto 2026.** With the July project landing, the rolling-12 clears the cat F ceiling of $38.642.048,36 and lands inside cat G ($46.211.109,37 / USD 40.184). It does **not** reach the cat-K límite — this is a one-step F→G move, not an RI question.
+- You're **already inside cat G** (rolling-12 $42.900.000,00 vs the cat F ceiling $38.642.048,36). The first move — F→G — isn't a forecast; it already happened. It just hasn't been formalized.
+- The closing project alone is **$11.440.000,00–$12.870.000,00** (USD 8.000–9.000 × 1.430, *calibrado jun-2026*). Run-rate: **$5.005.000,00/mes** (USD 3.500 × 1.430).
+- **Second crossing — G→H.** Once the July project lands, the rolling-12 climbs to ≈ USD 38.000–39.000 = **$54.340.000,00–$55.770.000,00**, which clears the cat G ceiling ($46.211.109,37) and lands inside **cat H** ($70.113.407,33 / USD 49.030), at **77,5%–79,5%** → 🟡 AMARILLO.
+- This is a **two-step move: F→G (already crossed — formalize it) → G→H (after July)**. It does **not** reach the cat-K límite ($108.357.084,05 / USD 75.774) — not an RI question.
 
 ### Structural Verdict
 
-**Stay in monotributo. Recategorize proactively to cat G inside the winter window — do not wait for ARCA to do it for you.**
+**Stay in monotributo. You've already crossed into cat G — recategorize F→G inside the winter window, don't wait for ARCA to do it for you. The July project then sets up a G→H move.**
 
-The winter recategorización window opens ~15-jul-2026 and closes **5-ago-2026**; it evaluates the 12 meses móviles closing June 2026. Your July project + run-rate cross the cat F ceiling, so the correct read of that window is **move to cat G**. Recategorizing proactively avoids the recat de oficio (and its up-to-50% penalty on the omitted integrated tax). Your cuota goes from **$129.045,32/mes** (cat F) to **$197.108,23/mes** (cat G, verbatim) — that is the price of the move, and it is the cheap outcome.
+The winter recategorización window opens ~15-jul-2026 and closes **5-ago-2026**; it evaluates the 12 meses móviles closing June 2026 — which already put you in cat G. Recategorizing proactively avoids the recat de oficio (and its up-to-50% penalty on the omitted integrated tax). Your cuota goes from **$129.045,32/mes** (cat F, what you pay now) to **$197.108,23/mes** (cat G, verbatim). After the July project lands, the rolling-12 moves into cat H (**$447.346,93/mes**) — recategorize again proactively, in the February 2027 window or the moment your monthly recompute shows the crossing. Two clean proactive moves beat one recat de oficio.
 
 **Bienes Personales (wealth tax):** no obligation. Your patrimony (the year's honorarios, no property) sits far below the MNI 2025 of **$384.728.044,57** — nothing to file. One lever worth knowing for year-end: USD sitting in a US account at 31/12 is *gravado*; the same dollars in an Argentine caja de ahorro/plazo fijo are *exento* with no cap. Not urgent at your level, but it's the free move if you ever near the MNI.
 
-**Confidence: HIGH.** Signal-by-signal: (a) all 6 inputs present and unambiguous; (b) the call is pure arithmetic from a current reference figure (rolling-12 $34.500.000,00 vs cat F ceiling $38.642.048,36 = 89,3%); (c) it's a deterministic *trigger* (proactive recategorización = Nivel 1, DIY informado), not a complex *choice*; (d) 100% export means no mixed-income ambiguity about the ceiling.
+**Confidence: HIGH.** Signal-by-signal: (a) all 6 inputs present and unambiguous; (b) the call is pure arithmetic from current reference figures (rolling-12 $42.900.000,00 already over the cat F ceiling $38.642.048,36, sitting at 92,8% of the cat G ceiling); (c) it's a deterministic *trigger* (proactive recategorización = Nivel 1, DIY informado), not a complex *choice*; (d) 100% export means no mixed-income ambiguity about the ceiling.
 
 ### Contador Escalation Trigger
 
-**No Nivel-2 handoff trigger active today.** Proactive recategorización F→G is Nivel 1 — you do it yourself in the ARCA portal, I commit to the call. The trigger *will* fire if either of two things happens: (1) you start taking **local AR clients** (mixed income makes the cat-K límite ambiguous), or (2) your rolling-12 approaches the **cat-K límite ($108.357.084,05)** — at that point the voluntary-exit-vs-exclusión analysis becomes a contador conversation. Neither is in play at USD 30K/year.
+**No Nivel-2 handoff trigger active today.** Proactive recategorización F→G (and the later G→H) is Nivel 1 — you do it yourself in the ARCA portal, I commit to the call. The trigger *will* fire if either of two things happens: (1) you start taking **local AR clients** (mixed income makes the cat-K límite ambiguous), or (2) your rolling-12 approaches the **cat-K límite ($108.357.084,05 / USD 75.774)** — at that point the voluntary-exit-vs-exclusión analysis becomes a contador conversation. Neither is in play at USD 30–39K/year.
 
 ### Timed Actions
 
-1. **[~15-jul to 5-ago-2026 — the winter window]** Recategorize to **cat G** in the ARCA portal (clave fiscal → Monotributo → Recategorización). ~15 minutes online.
-2. **[Before recategorizing]** Recompute the rolling-12 one more time against the **BNA comprador of that day** — if the peso has moved, the percentage moves with it. USD earners recalc monthly.
+1. **[~15-jul to 5-ago-2026 — the winter window]** Recategorize to **cat G** in the ARCA portal (clave fiscal → Monotributo → Recategorización). ~15 minutes online — you're already over the cat F ceiling, so this is overdue, not optional.
+2. **[Before recategorizing]** Recompute the rolling-12 one more time against the **BNA comprador of that day** — at $1.430 the FX is doing most of the work, so if the peso moves the category moves with it. USD earners recalc monthly.
 3. **[15-jul-2026 — refresh flag]** ARCA publishes the **Ago2026–Ene2027** table around 15-jul (est. +14–17%, *proyección privada, no oficial*). The cat F/G figures above go stale for any categorization after that date — re-take them from `categorias.asp` before acting.
 4. **[Each month]** Reconcile Factura E + USD inflow + the ARS conversion at the day's BNA. Keep the folder; it's the defense if ARCA ever cross-checks.
 5. **[Ongoing]** Keep dollars destined to stay in ARS in an Argentine bank account before any 31/12 if your saldo ever grows toward the MNI — the Bienes Personales exemption is free there.
 
 ### Decision Trace
 
-- **Input:** cat F, rolling-12 USD 30K (= $34.500.000,00 @ BNA comprador 1.150), July project USD 8–9K, 100% export, CABA, reactive contador.
-- **Norma/threshold:** cat F ceiling $38.642.048,36; recategorización evaluates 12 meses móviles; winter window closes 5-ago-2026 (categorias-monotributo.md §1/§2/§7).
-- **Cálculo:** $34.500.000,00 ÷ $38.642.048,36 = 89,3% (ROJO); headroom $4.142.048,36 < project $9.2–10.35M → crosses into cat G in agosto 2026.
-- **Conclusión:** stay monotributo, recategorize proactively F→G in the winter window. Cuota $129.045,32 → $197.108,23. Bienes Personales below MNI $384.728.044,57, no obligation.
+- **Input:** cat F, rolling-12 USD 30K (= $42.900.000,00 @ BNA comprador 1.430), July project USD 8–9K, 100% export, CABA, reactive contador.
+- **Norma/threshold:** cat F ceiling $38.642.048,36; cat G ceiling $46.211.109,37; cat H ceiling $70.113.407,33; recategorización evaluates 12 meses móviles; winter window closes 5-ago-2026 (categorias-monotributo.md §1/§2/§7).
+- **Cálculo:** $42.900.000,00 already > cat F ceiling → inside cat G at 92,8% (ROJO); July project ($11.44–12.87M) lifts the rolling-12 to ≈$54.34–55.77M → cat H (77,5–79,5%).
+- **Conclusión:** stay monotributo, recategorize proactively F→G in the winter window (already crossed), then G→H after July. Cuota $129.045,32 → $197.108,23 → $447.346,93. Bienes Personales below MNI $384.728.044,57, no obligation.
 - **Confidence:** HIGH (deterministic trigger). **Escalation:** none active today; fires at mixed income or near the cat-K límite.
 
 ---
@@ -84,14 +84,14 @@ The winter recategorización window opens ~15-jul-2026 and closes **5-ago-2026**
 
 ```
 PERÍODO: rolling-12 closing June 2026
-RÉGIMEN ACTUAL: monotributo cat F
-FACTURACIÓN USD DEL PERÍODO: USD 30,000 valued at BNA comprador 1.150 (jun-2026) = $34.500.000,00
-POSICIÓN vs TOPE: cat F ceiling $38.642.048,36 — headroom $4.142.048,36 — tier ROJO (89,3%)
-PROYECCIÓN A FIN DE SEMESTRE: +$9.2M–$10.35M (July project) + run-rate → crosses cat F, lands in cat G in agosto 2026
+RÉGIMEN ACTUAL: monotributo cat F (under-categorized — rolling-12 already in cat G)
+FACTURACIÓN USD DEL PERÍODO: USD 30,000 valued at BNA comprador 1.430 (jun-2026) = $42.900.000,00
+POSICIÓN vs TOPE: already over cat F ceiling $38.642.048,36; inside cat G ($46.211.109,37) at 92,8% — tier ROJO; headroom to G $3.311.109,37
+PROYECCIÓN A FIN DE SEMESTRE: +$11.44M–$12.87M (July project) + run-rate → rolling-12 ≈$54.34–55.77M → cat H ($70.113.407,33), 77,5–79,5%
 EXPOSICIÓN BIENES PERSONALES: patrimony well below MNI $384.728.044,57 → no obligation
-DECISIÓN PROPUESTA: stay monotributo, recategorize proactively F→G in the winter window (cuota $129.045,32 → $197.108,23)
+DECISIÓN PROPUESTA: stay monotributo, recategorize proactively F→G now in the winter window (cuota $129.045,32 → $197.108,23), then G→H after July ($447.346,93)
 PREGUNTAS PARA EL CONTADOR:
-  1. Confirm the rolling-12 against the BNA comprador of the recat day — does the FX move push us past cat G?
+  1. Confirm the rolling-12 against the BNA comprador of the recat day — at $1.430 the FX drives the category; does a further move push us deeper into H?
   2. Any deductible structure that would change the picture once the Ago2026 table publishes?
 PRÓXIMAS FECHAS ARCA: winter recategorización opens ~15-jul, closes 5-ago-2026; new table ~15-jul-2026
 PUNTOS A VERIFICAR: BNA comprador vs vendedor nuance (verificar_manual); table refresh post-15-jul-2026 (+14–17% est., not official)
@@ -117,25 +117,24 @@ Martín, dev backend en CABA. **Régimen:** monotributo. **Facturación rolling-
 
 ### Por Qué Estás en la Zona RI
 
-Lo que te trae acá no es que "ya sos grande". Es la proximidad al **tope de cat K** ($108.357.084,05 — el límite máximo del régimen) combinada con un run-rate que sube. Veamos dónde estás de verdad:
+Lo que te trae acá no es que "ya sos grande". Es que con el dólar a $1.430 ya estás **dentro de cat K** y el techo del régimen, medido en USD, se te corrió debajo de los pies. Veamos dónde estás de verdad:
 
-- **Rolling-12 en ARS:** USD 72.000 × BNA comprador 1.150 = **$82.800.000,00** *(calibrado jun-2026, recalcular contra el BNA del día)*.
-- Ese número cae **entre el tope de cat I ($78.479.211,62 / USD 68.244) y el de cat J ($89.872.640,30 / USD 78.150)** → tu categoría correcta hoy es **cat J**, no una más baja.
-- **Headroom vs el tope de cat J:** $89.872.640,30 − $82.800.000,00 = **$7.072.640,30** (USD 6.150). Estás al **92,1%** del tope de cat J → tier 🔴 **ROJO**.
-- **Headroom hasta el tope de cat K (límite máximo):** $108.357.084,05 − $82.800.000,00 = **$25.557.084,05** (USD 22.224).
-- **Run-rate:** USD 7.000/mes = **$8.050.000,00/mes**, y subiendo. Cuidado con la aritmética del rolling-12 (suma móvil, no proyección lineal): a USD 7.000/mes *plano* tu rolling-12 se estabiliza en ~USD 84.000 (**≈$96.600.000,00**) → eso te recategoriza a **cat K**, pero **no supera** el límite de cat K ($108.357.084,05), así que **no** te excluye del régimen. Salir del monotributo (superar el límite K) exige que el run-rate **siga subiendo** —vos decís que sube—: sostenido por encima de **~USD 7.850/mes** cruzás el límite en los meses siguientes. La fecha depende de la trayectoria, no de un número fijo; por eso se planifica ahora.
+- **Rolling-12 en ARS:** USD 72.000 × BNA comprador 1.430 = **$102.960.000,00** *(calibrado jun-2026, recalcular contra el BNA del día)*.
+- Ese número **ya superó el tope de cat J ($89.872.640,30 / USD 62.848)** y cae **dentro de cat K** ($108.357.084,05 / USD 75.774) → tu categoría correcta hoy es **cat K**, la última del régimen.
+- **Headroom hasta el límite de cat K (la salida del monotributo):** $108.357.084,05 − $102.960.000,00 = **$5.397.084,05** (USD 3.774). Estás al **95,0%** del límite máximo del régimen → tier 🔴 **ROJO**.
+- **Run-rate:** USD 7.000/mes = **$10.010.000,00/mes**, y subiendo. Y acá está el punto que te cambia la pregunta: con el dólar a $1.430, el límite de cat K equivale a **USD 75.774/año**. A USD 7.000/mes *plano* tu rolling-12 se estabiliza en ~USD 84.000 (**≈$120.120.000,00**) → eso **supera el límite de cat K** y te **excluye del régimen**. No necesitás que el run-rate suba: a ritmo plano ya cruzás. Subiendo, cruzás antes.
 
-Estás en la zona RI por **trayectoria contra el límite del régimen**, no porque RI sea "el próximo nivel". No lo es.
+Estás en la zona RI **porque el monotributo te está por expulsar** — no porque RI sea "el próximo nivel". La devaluación movió el techo, no tu facturación.
 
 ### Costeo RI vs Quedarte
 
-El número que cierra la discusión es la **presión tributaria efectiva**, no la sensación de estatus.
+Acá viene el matiz: el monotributo *sigue siendo* más barato que RI a tu nivel — pero eso ya no decide si saltás, porque no te vas a poder quedar. El costeo te dice **a qué te enfrentás en RI**, no si te conviene evitarlo.
 
 ```
 MONOTRIBUTO cat K (tope)           RI EXPORTADOR PURO (apenas superando)
 ─────────────────────────         ─────────────────────────────────────
 Cuota fija $1.381.687,90/mes       Ganancias 5%–35% sobre GNSI (Art. 94 LIG)
-  (USD 1.201 @ 1.150)              + Autónomos cat I (mínima) ~$72.446,22/mes
+  (USD 966 @ 1.430)                + Autónomos cat I (mínima) ~$72.446,22/mes
   incluye SIPA + OS +                (verificar_manual: re-tomar del PDF ARCA)
   componente impositivo            + Contador RI+export $120.000–$200.000/mes
 IVA export: 0%                       (verificar_manual: estim. mercado $250–400k NO consolidada)
@@ -149,20 +148,20 @@ Presión efectiva ~15,3%            Presión efectiva >30–35%
 - **Mono cat K, presión ~15,3%:** $1.381.687,90 × 12 = $16.580.254,80 sobre $108.357.084,05 facturados (monotributo-vs-ri.md §1).
 - **RI exportador puro, >30–35%:** Ganancias marginal en tramos 27/31/35% (el último, 35%, arranca en $60.750.913,96 de ganancia neta acumulada) + autónomos + contador + saldo IVA inmovilizado. La carga marginal **se duplica** al cruzar.
 - En RI tenés deducciones (GNI/MNI $5.151.802,50; deducción especial $18.031.308,76 = 3,5× GNI), pero **para el exportador puro sin gastos altos no alcanzan a dar vuelta el cálculo**: el IVA de exportación ya es 0% en ambos regímenes, así que el "beneficio IVA" del RI no existe para vos.
-- **Break-even:** el salto recién conviene superando **sostenidamente USD 140.000–150.000/año** (= $161.000.000–$172.500.000, ×1.150 *calibrado jun-2026*). Estás en USD 72.000. Anticipar el salto **destruye valor marginal**.
+- **El break-even que te citaron tus colegas existe, pero no aplica a tu decisión.** RI recién sería *más barato* que el monotributo superando **sostenidamente USD 140.000–150.000/año** (= $200.200.000–$214.500.000, ×1.430 *calibrado jun-2026*). Estás en USD 72.000 — lejísimos de ahí. Pero el monotributo te expulsa a **USD 75.774** (el límite de cat K al dólar de hoy), mucho antes del break-even. Por eso la pregunta no es "¿me conviene RI?" sino "¿cómo salgo del monotributo con el menor daño?". RI te va a costar más; igual vas a estar ahí.
 
 ### Veredicto Quedarte-vs-Saltar
 
-**NO saltes a RI todavía. Recategorizá a cat K ya, y abrí la conversación de RI con tu contador AHORA — no para saltar, sino para planificar.**
+**El monotributo te expulsa pronto — no es opcional. Recategorizá a cat K ya (Nivel 1), y activá con tu contador la salida voluntaria al RI AHORA, antes de que ARCA te excluya de oficio.**
 
-Para el exportador puro, el monotributo es fiscalmente superior **hasta cat K**. RI no es una graduación: es una elección de condiciones específicas (clientes locales que exigen Factura A, gastos deducibles >50%, escala >$120M para evaluar SAS) — ninguna de las cuales tenés. Lo que sí tenés es un run-rate en ascenso que, si sigue subiendo, te lleva a superar el límite de cat K (a USD 7.000/mes plano te estabilizás en cat K sin cruzarlo). Por eso:
+Para el exportador puro, el monotributo es fiscalmente superior **hasta cat K** — y vos ya estás en cat K, al 95% del límite. Lo que cambió no es tu facturación: es el dólar. A $1.430 el techo del régimen quedó en USD 75.774, y tu run-rate plano (USD 84.000/año) lo supera. Eso te saca del monotributo por ingresos, te suba o no el run-rate. RI no es "el próximo nivel" que elegís; es donde caés cuando el régimen te expulsa. La única elección que te queda es **cómo y cuándo** ejecutar la salida. Por eso:
 
-1. **Recategorizá a cat K** en la ventana de invierno (vence 5-ago-2026). Cuota cat K servicios **$1.381.687,90/mes** (USD 1.201).
-2. **Abrí la conversación RI ahora**, no cuando ARCA te excluya. El salto tiene **veda de reingreso de 3 años** — es decisión de varios años, no reversible al semestre. Y la **salida voluntaria anticipada** (renunciar antes de cruzar) es preferible a la **exclusión de oficio retroactiva** (que te vuelve RI desde la cero hora del día del exceso, con deuda de Ganancias + autónomos + intereses sobre meses para atrás).
+1. **Recategorizá a cat K** en la ventana de invierno (vence 5-ago-2026). Cuota cat K servicios **$1.381.687,90/mes** (USD 966). Es Nivel 1, lo hacés vos — pero es un parche de semanas, no la solución.
+2. **Activá la salida voluntaria al RI ahora**, no cuando ARCA te excluya. La **salida voluntaria anticipada** (renunciar antes de cruzar el límite) es muy preferible a la **exclusión de oficio retroactiva** (que te vuelve RI desde la cero hora del día del exceso, con deuda de Ganancias + autónomos + intereses sobre meses para atrás). El salto tiene **veda de reingreso de 3 años**, así que el *timing* lo afina el contador — pero la dirección ya la decidió el límite.
 
-Regla operativa de `reference/`: con >85–90% del tope cat K y crecimiento sostenido → activar el análisis de salida voluntaria. Vos todavía no estás ahí (estás al ~76% del tope K — vs 92,1% del tope de cat J, tu categoría actual), pero la trayectoria te lleva. Planificás ahora; no improvisás en noviembre.
+Regla operativa de `reference/`: con >85–90% del límite de cat K y crecimiento sostenido → activar el análisis de salida voluntaria. Vos estás al **95,0%** del límite K, con un run-rate que ya lo supera a ritmo plano. Estás **dentro** de la zona de la regla, no cerca. Por eso es ahora; en noviembre ya sería tarde.
 
-**Confidence: REQUIRES_PROFESSIONAL.** No porque el trigger sea dudoso (la recat a cat K es aritmética HIGH), sino porque la decisión de fondo — **cuándo y cómo ejecutar la salida a RI** — depende de tu estructura de gastos completa, tu pipeline real 2027 y la mecánica del alta (baja mono + alta Ganancias/IVA/autónomos + reconfigurar PV). Eso es la elección compleja, no el trigger. La firma la pone el contador.
+**Confidence: REQUIRES_PROFESSIONAL.** No porque el trigger sea dudoso (la recat a cat K y la exclusión inminente son aritmética HIGH), sino porque la decisión de fondo — **cuándo y cómo ejecutar la salida a RI** — depende de tu estructura de gastos completa, tu pipeline real 2027 y la mecánica del alta (baja mono + alta Ganancias/IVA/autónomos + reconfigurar PV). Eso es la elección compleja, no el trigger. La firma la pone el contador.
 
 ### Trigger de Escalación al Contador
 
@@ -170,18 +169,18 @@ Regla operativa de `reference/`: con >85–90% del tope cat K y crecimiento sost
 
 ### Acciones con Plazo
 
-1. **[Ventana de invierno, vence 5-ago-2026]** Recategorizá a **cat K** en el portal ARCA. No te quedes sub-categorizado: tu rolling-12 ($82.800.000,00) ya está en cat J camino a K.
+1. **[Ventana de invierno, vence 5-ago-2026]** Recategorizá a **cat K** en el portal ARCA. No te quedes sub-categorizado: tu rolling-12 ($102.960.000,00) ya está en cat K, al 95% del límite.
 2. **[Esta semana]** Agendá reunión con tu contador específicamente para **planificar la transición a RI** — no para saltar, para mapear el trigger y el costeo con tus gastos reales. Llevá el Reviewer Brief.
-3. **[Mensual]** Recalculá el rolling-12 contra el **BNA comprador del día**. Proyectá cuándo superás el límite de cat K ($108.357.084,05) **si el run-rate sigue subiendo** — a USD 7.000/mes plano te estabilizás en cat K (~$96.600.000,00) sin cruzarlo.
+3. **[Mensual]** Recalculá el rolling-12 contra el **BNA comprador del día**. A USD 7.000/mes plano te estabilizás en ~$120.120.000,00 — por **encima** del límite de cat K ($108.357.084,05). Con el dólar a $1.430 ya no es "si el run-rate sube": a ritmo plano ya cruzás. Cada movimiento del peso te acerca la fecha.
 4. **[15-jul-2026]** Refresh: ARCA publica la tabla Ago2026–Ene2027 (est. +14–17%, *no oficial*). Los topes de arriba quedan stale para categorizaciones posteriores — re-tomá de `categorias.asp`.
-5. **[Cuando llegues a ~85–90% del tope K]** Con tu contador, ejecutá el análisis de **salida voluntaria anticipada** antes de que ARCA fuerce la exclusión.
+5. **[Ya — estás al 95% del límite K]** Con tu contador, ejecutá el análisis de **salida voluntaria anticipada** antes de que ARCA fuerce la exclusión retroactiva. Esta es la acción que no espera a la próxima ventana.
 
 ### Trazabilidad de la Decisión
 
-- **Input:** monotributo, rolling-12 USD 72.000 (= $82.800.000,00 @ BNA comprador 1.150), run-rate USD 7.000/mes, 100% export, CABA, contador reactivo.
-- **Norma/threshold:** cat J ceiling $89.872.640,30; cat K límite máximo $108.357.084,05; break-even RI USD 140–150K/año; veda de reingreso 3 años (monotributo-vs-ri.md §1/§3/§6).
-- **Cálculo:** $82.800.000,00 → cat J (92,1%, ROJO); run-rate $8.050.000,00/mes y en ascenso — a ritmo plano se estabiliza en ~USD 84.000 (≈$96.600.000,00, cat K sin exclusión); superar el límite de cat K depende de que el run-rate siga subiendo (>~USD 7.850/mes sostenido); presión mono ~15,3% vs RI >30–35%.
-- **Conclusión:** NO saltar todavía; recategorizar a cat K; abrir la conversación RI ahora; correr salida voluntaria anticipada antes de la exclusión de oficio.
+- **Input:** monotributo, rolling-12 USD 72.000 (= $102.960.000,00 @ BNA comprador 1.430), run-rate USD 7.000/mes, 100% export, CABA, contador reactivo.
+- **Norma/threshold:** cat J ceiling $89.872.640,30; cat K límite máximo $108.357.084,05 (= USD 75.774 @ 1.430); break-even RI USD 140–150K/año; veda de reingreso 3 años (monotributo-vs-ri.md §1/§3/§6).
+- **Cálculo:** $102.960.000,00 → cat K (95,0%, ROJO); run-rate $10.010.000,00/mes — a ritmo plano se estabiliza en ~USD 84.000 (≈$120.120.000,00), que **supera** el límite de cat K → exclusión por ingresos sin necesidad de que el run-rate suba; presión mono cat K ~15,3% vs RI >30–35%, pero el régimen ya no es opción de permanencia.
+- **Conclusión:** recategorizar a cat K ya (Nivel 1); la salida a RI no es opcional (el límite K en USD se corrió a 75.774 por el dólar a 1.430); correr la salida voluntaria anticipada con el contador antes de la exclusión de oficio retroactiva.
 - **Confidence:** REQUIRES_PROFESSIONAL (la elección compleja, no el trigger). **Escalation:** Nivel 2 — paso a RI / salida voluntaria.
 
 ---
@@ -190,16 +189,16 @@ Regla operativa de `reference/`: con >85–90% del tope cat K y crecimiento sost
 
 ```
 PERÍODO: 12 meses móviles que cierran en junio 2026
-RÉGIMEN ACTUAL: monotributo cat J (rolling-12 entre tope I y tope J)
-FACTURACIÓN USD DEL PERÍODO: USD 72.000 valuado a BNA comprador 1.150 (jun-2026) = $82.800.000,00
-POSICIÓN vs TOPE: tope cat J $89.872.640,30 — headroom $7.072.640,30 — tier ROJO (92,1%)
-PROYECCIÓN A FIN DE SEMESTRE: run-rate $8.050.000,00/mes y en ascenso → a ritmo plano se estabiliza en ~USD 84.000 (≈$96.600.000,00, cat K, sin exclusión); superar el límite de cat K ($108.357.084,05) depende de que el run-rate siga subiendo (>~USD 7.850/mes sostenido) — fecha no fija, planificar
+RÉGIMEN ACTUAL: monotributo cat J (sub-categorizado — rolling-12 ya en cat K)
+FACTURACIÓN USD DEL PERÍODO: USD 72.000 valuado a BNA comprador 1.430 (jun-2026) = $102.960.000,00
+POSICIÓN vs TOPE: dentro de cat K ($108.357.084,05) — headroom al límite $5.397.084,05 — tier ROJO (95,0%)
+PROYECCIÓN A FIN DE SEMESTRE: run-rate $10.010.000,00/mes → a ritmo plano se estabiliza en ~USD 84.000 (≈$120.120.000,00), que SUPERA el límite de cat K ($108.357.084,05 = USD 75.774 @ 1.430) → exclusión del régimen por ingresos, sin necesidad de que el run-rate suba
 EXPOSICIÓN BIENES PERSONALES: pendiente — informar patrimonio al 31/12 vs MNI $384.728.044,57 (no aportado en el intake)
-DECISIÓN PROPUESTA: recategorizar a cat K ya (cuota $1.381.687,90/mes); NO saltar a RI todavía; planificar salida voluntaria anticipada antes de cruzar el tope K
+DECISIÓN PROPUESTA: recategorizar a cat K ya (cuota $1.381.687,90/mes, Nivel 1); la salida a RI no es opcional (el límite K se corrió a USD 75.774 por el dólar a 1.430) — ejecutar salida voluntaria anticipada antes de la exclusión de oficio retroactiva
 PREGUNTAS PARA EL CONTADOR:
-  1. Con mi estructura de gastos real, ¿el break-even RI sigue en USD 140–150K o mi caso lo mueve?
-  2. ¿Conviene salida voluntaria anticipada al cruzar ~85–90% del tope K, o esperar? (la veda de reingreso es de 3 años)
-  3. ¿Qué documentación de autónomos / alta IVA-export tengo que tener lista antes del salto?
+  1. ¿Cuál es el timing óptimo de la salida voluntaria para minimizar el costo del primer ejercicio RI? (la veda de reingreso es de 3 años)
+  2. Con mi estructura de gastos real, ¿cuánto baja la base de Ganancias en RI? ¿El régimen puente (50% del tope de la cat máxima como gasto deducible) me aplica bien?
+  3. ¿Qué documentación de autónomos / alta IVA-export tengo que tener lista antes del salto, y conviene SAS o persona humana?
 PRÓXIMAS FECHAS ARCA: recategorización de invierno vence 5-ago-2026; nueva tabla ~15-jul-2026
 PUNTOS A VERIFICAR: autónomos cat I ~$72.446,22 (re-tomar PDF ARCA jun-2026); contador RI/export $120–200k base / $250–400k estim. mercado NO consolidada; escala Ganancias jul–dic 2026 aún no publicada
 ```
@@ -230,7 +229,7 @@ Sofía, traductora/UX writer en CABA, monotributo (recién inscripta). **Primera
 - **IVA:** **0% (tasa cero)** en exportación de servicios. En monotributo el componente impositivo ya está dentro de tu cuota; no liquidás IVA aparte. ✓
 - **Tipo de cambio — dos rates distintos, no los mezcles:**
   - Para **EMITIR** la Factura E (consignás el TC en el comprobante): **BNA VENDEDOR** del cierre del día hábil cambiario anterior (RG 5616/2024). Es un poco más alto que el comprador. *(verificar_manual: matiz fino — confirmá el rate con tu contador en el primer comprobante.)*
-  - Para **CONVERTIR a ARS a efectos del tope del monotributo** (cuando categorices): **BNA COMPRADOR** del cierre del día hábil cambiario anterior ≈ **$1.150/USD** *(calibrado jun-2026, recalcular contra el BNA del día)*.
+  - Para **CONVERTIR a ARS a efectos del tope del monotributo** (cuando categorices): **BNA COMPRADOR** del cierre del día hábil cambiario anterior ≈ **$1.430/USD** *(calibrado jun-2026, recalcular contra el BNA del día)*.
 - **IIBB CABA:** **exenta** la exportación de servicios. Declarás **exento cada mes en E-SICOL**, sin pagar.
 - **Cambiario:** ingreso de divisas dentro de **20 días hábiles** desde la percepción; cuenta USD propia; transferencia SWIFT cross-border trazable; código cambiario **A22**.
 
@@ -289,9 +288,9 @@ Tomás, dev/consultor en CABA, monotributo, venía en **cat J**. Facturación 10
 
 No me diste el rolling-12 exacto en ARS, así que esto es **supuesto, no dato**:
 
-- **Rolling-12 estimado:** venías en cat J → entre $78.479.211,62 (tope I) y $89.872.640,30 (tope J). Si ARCA te recategorizó hacia arriba, tu rolling-12 estimado ronda **≈ $101.200.000,00 (USD ~88.000 × 1.150)** *(⚠ supuesto — recalcular contra el rolling-12 real y el BNA del día)*.
-- **Tope cat K (límite máximo):** **$108.357.084,05 / USD 94.224** (verbatim). Headroom estimado ≈ **$7.157.084,05** *(supuesto)*.
-- **Tope %:** ≈ **93,4%** del tope K → tier 🔴 **ROJO** *(confirmar contra el rolling-12 real)*.
+- **Rolling-12 estimado:** venías en cat J → entre $78.479.211,62 (tope I) y $89.872.640,30 (tope J). Si ARCA te recategorizó hacia arriba, tu rolling-12 estimado ronda **≈ $100.100.000,00 (USD ~70.000 × 1.430)** *(⚠ supuesto — recalcular contra el rolling-12 real y el BNA del día)*.
+- **Tope cat K (límite máximo):** **$108.357.084,05 / USD 75.774** (verbatim). Headroom estimado ≈ **$8.257.084,05** *(supuesto)*.
+- **Tope %:** ≈ **92,4%** del tope K → tier 🔴 **ROJO** *(confirmar contra el rolling-12 real)*.
 
 La cifra exacta la determina ARCA en la notificación (a qué categoría te movió) y tu facturación real. Eso lo cruza el contador. **No invento el número.**
 
@@ -325,7 +324,7 @@ La cifra exacta la determina ARCA en la notificación (a qué categoría te movi
 
 - **Input:** notificación de recategorización de oficio en el DFE, cat J previa, 100% export, CABA, sin contador, 15 días hábiles.
 - **Norma/threshold:** recat de oficio = Nivel 2 (triggers §Nivel 2); apelación 15 días hábiles; sanción hasta 50% del integrado (reducible a la mitad si se acepta en 15 días); umbral penal Ley 27.799 $100M/tributo/ejercicio (inalcanzable para exportador IVA 0%); Art. 38 $220.000 = sanción distinta.
-- **Cálculo:** rolling-12 estimado ≈ $101.200.000,00 (⚠ supuesto, USD ~88.000) ÷ tope K $108.357.084,05 ≈ 93,4% (ROJO) — a confirmar contra el real.
+- **Cálculo:** rolling-12 estimado ≈ $100.100.000,00 (⚠ supuesto, USD ~70.000) ÷ tope K $108.357.084,05 ≈ 92,4% (ROJO) — a confirmar contra el real.
 - **Conclusión:** NO resuelvo el descargo; escalo a contador (Nivel 2); marco el plazo de 15 días; calibro el miedo (administrativo, no penal); preparo el Reviewer Brief.
 - **Confidence:** REQUIRES_PROFESSIONAL. **Escalation:** Nivel 2 — recat de oficio (sube a Nivel 3 si aparece determinación de oficio Art. 17).
 
@@ -336,8 +335,8 @@ La cifra exacta la determina ARCA en la notificación (a qué categoría te movi
 ```
 PERÍODO: 12 meses móviles del control sistémico de ARCA (a confirmar la ventana exacta de la notificación)
 RÉGIMEN ACTUAL: monotributo cat J (recategorizado de oficio a categoría superior — confirmar cuál en el DFE)
-FACTURACIÓN USD DEL PERÍODO: USD ~88.000 estimado (⚠ supuesto) valuado a BNA comprador 1.150 = ≈ $101.200.000,00 — RECONSTRUIR con la facturación real
-POSICIÓN vs TOPE: tope cat K $108.357.084,05 — headroom estimado ≈ $7.157.084,05 — tier ROJO (≈93,4%, a confirmar)
+FACTURACIÓN USD DEL PERÍODO: USD ~70.000 estimado (⚠ supuesto) valuado a BNA comprador 1.430 = ≈ $100.100.000,00 — RECONSTRUIR con la facturación real
+POSICIÓN vs TOPE: tope cat K $108.357.084,05 — headroom estimado ≈ $8.257.084,05 — tier ROJO (≈92,4%, a confirmar)
 PROYECCIÓN A FIN DE SEMESTRE: confirmar si el rolling-12 real cruza el tope de cat K (= exclusión de pleno derecho) o solo recategoriza
 EXPOSICIÓN BIENES PERSONALES: pendiente — patrimonio al 31/12 vs MNI $384.728.044,57 (no aportado)
 DECISIÓN PROPUESTA: NO la resuelve el operator — recat de oficio es Nivel 2. Decidir aceptar (sanción reducida a la mitad dentro de 15 días hábiles) vs manifestar disconformidad si el rolling-12 real no respalda la nueva categoría.

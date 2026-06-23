@@ -102,22 +102,22 @@ const Page = () => {
               <TextureCard>
                 <TextureCardContent className="space-y-4 p-5 text-base leading-relaxed text-ink/90">
                 <p>
-                  Rolling-12 <span className="font-mono">$34.500.000,00</span> vs the cat F ceiling{" "}
-                  <span className="font-mono">$38.642.048,36</span> ={" "}
-                  <span className="font-mono">89,3%</span> → tier{" "}
+                  Rolling-12 <span className="font-mono">$42.900.000,00</span> (USD 30K × BNA{" "}
+                  <span className="font-mono">1.430</span>) is already over the cat F ceiling{" "}
+                  <span className="font-mono">$38.642.048,36</span> → inside cat G at{" "}
+                  <span className="font-mono">92,8%</span> → tier{" "}
                   <span className="text-rojo font-semibold">🔴 ROJO</span>. Your July project (
-                  <span className="font-mono">$9.200.000,00–$10.350.000,00</span>) overruns the entire
-                  headroom by itself, so the rolling-12 crosses into cat G in{" "}
-                  <strong>agosto 2026</strong>. One-step F→G — not an RI question.
+                  <span className="font-mono">$11.440.000,00–$12.870.000,00</span>) then lifts the
+                  rolling-12 into cat H. Two-step F→G (already crossed) → G→H — not an RI question.
                 </p>
                 <p>
                   <span className="text-accent">Verdict:</span> stay in monotributo, recategorize
-                  proactively to cat G in the winter window (closes{" "}
-                  <span className="font-mono">5-ago-2026</span>). Your cuota goes{" "}
+                  proactively F→G in the winter window (closes{" "}
+                  <span className="font-mono">5-ago-2026</span>), then G→H after July. Your cuota goes{" "}
                   <span className="font-mono">$129.045,32</span> →{" "}
-                  <span className="font-mono">$197.108,23</span>/mes — that&apos;s the price, and it&apos;s
-                  the cheap outcome. <span className="font-mono">Bienes Personales</span>: below the
-                  MNI, no obligation.
+                  <span className="font-mono">$197.108,23</span> →{" "}
+                  <span className="font-mono">$447.346,93</span>/mes — two clean proactive moves.{" "}
+                  <span className="font-mono">Bienes Personales</span>: below the MNI, no obligation.
                 </p>
                 <p className="font-mono text-sm border-l-2 border-line pl-4 text-ink/85">
                   <span className="text-verde">Confidence: HIGH</span> — a deterministic trigger, all
@@ -133,8 +133,8 @@ const Page = () => {
             </div>
 
             <p className="text-mute text-sm leading-relaxed border-l-2 border-line pl-4">
-              Figures convert USD→ARS at the BNA comprador (~<span className="font-mono">$1.150</span>/USD,
-              junio 2026); the folder recomputes against the day&apos;s rate on every paste, and flags when the
+              Figures convert USD→ARS at the BNA comprador (~<span className="font-mono">$1.430</span>/USD,
+              BNA al 23-jun-2026); the folder recomputes against the day&apos;s rate on every paste, and flags when the
               next ARCA table makes a categorization stale.
             </p>
 

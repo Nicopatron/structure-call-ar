@@ -1,6 +1,6 @@
-# identity-example — Lucía, the cat F designer with a project about to tip her over
+# identity-example — Lucía, the cat F designer the dollar already tipped into cat G
 
-> Composite — not a real client. Built from the pattern of CABA freelancers who bill a steady US client in USD and hit the monotributo ceiling not by growth but by one fat invoice landing in the wrong month. The STRUCTURE-mode user.
+> Composite — not a real client. Built from the pattern of CABA freelancers who bill a steady US client in USD and cross a monotributo ceiling not by growth but by the peso moving — a flat USD income worth more pesos every month — with one fat invoice landing on top. The STRUCTURE-mode user.
 
 ## Who
 
@@ -8,7 +8,7 @@ Lucía, product designer in CABA. Monotributo (Argentine simplified tax regime) 
 
 ## The decision they're on the hook for
 
-A single project closes end of July, USD 8,000–9,000 **in one shot**, on top of her standing run-rate. The question is structural and annual, not monthly: **does this one invoice push her rolling-12 over the cat F ceiling, and if so, what does she do before ARCA does it for her?** This is not "which channel do I cash the project in" — that's her routing coach's question. It's "what category am I in after July, and when do I move."
+A single project closes end of July, USD 8,000–9,000 **in one shot**, on top of her standing run-rate. The question is structural and annual, not monthly: **her rolling-12 has already crossed the cat F ceiling at today's dollar — which category is she really in, and what does she move before ARCA does it for her?** This is not "which channel do I cash the project in" — that's her routing coach's question. It's "what category am I in now, where does July leave me, and when do I move."
 
 ## Voice pillars
 
@@ -24,7 +24,7 @@ A single project closes end of July, USD 8,000–9,000 **in one shot**, on top o
 
 ## Content themes
 
-1. **The one-shot invoice that tips the rolling-12.** Her ceiling risk is episodic, not a slow climb — one USD 8–9K project lands and the 12-month total crosses. The structural read: the crossing is computed once against the ceiling, not felt invoice-by-invoice.
+1. **The FX-driven crossing, with a one-shot invoice on top.** Her ceiling risk isn't a slow climb — at today's dollar her flat USD 30K already sits over cat F, and one USD 8–9K project then lifts her again. The structural read: the crossing is computed once against the ceiling at the day's BNA, not felt invoice-by-invoice.
 2. **Recategorize proactively vs wait for ARCA.** Her instinct ("before I get in trouble") *is* the fork: a proactive `recategorización` (the semi-annual category move) in the winter window vs eating a `recat de oficio` (ARCA forcibly recategorizing you) with its up-to-50% penalty. She wants permission to move early; the right answer gives it.
 3. **Where the dollars sit at 31/12.** She holds USD in a US account and a local box. The annual lever — USD in an Argentine account at year-end is exento for `Bienes Personales` (wealth tax) — is free money she's nowhere near needing yet, but it's the kind of forward note she values.
 
@@ -32,12 +32,12 @@ A single project closes end of July, USD 8,000–9,000 **in one shot**, on top o
 
 Lucía arrives roughly right and wants confirmation plus the exact move — not a menu. The specialist gives her a deterministic, committed call:
 
-- Rolling-12 **$34.500.000,00** vs cat F ceiling **$38.642.048,36** = **89,3%** → tier 🔴 **ROJO**. Headroom **$4.142.048,36**.
-- The July project (**$9.200.000,00–$10.350.000,00**) overruns the entire headroom by itself → the rolling-12 crosses into cat G in **agosto 2026**. One-step F→G, not an RI question.
-- **Verdict: stay in monotributo, recategorize proactively to cat G in the winter window (closes 5-ago-2026).** Cuota goes **$129.045,32/mes → $197.108,23/mes** — that's the price, and it's the cheap outcome.
+- Rolling-12 **$42.900.000,00** (USD 30K × 1.430) already over the cat F ceiling **$38.642.048,36** → inside cat G at **92,8%** → tier 🔴 **ROJO**. Headroom to the cat G ceiling (**$46.211.109,37**): **$3.311.109,37**.
+- The July project (**$11.440.000,00–$12.870.000,00**) then lifts the rolling-12 to ≈$54.34–55.77M → into cat H (**$70.113.407,33**), 77,5–79,5%. Two-step: F→G (already crossed) → G→H. Not an RI question.
+- **Verdict: stay in monotributo, recategorize proactively F→G in the winter window (closes 5-ago-2026), then G→H after July.** Cuota goes **$129.045,32/mes → $197.108,23/mes → $447.346,93/mes** — the price of two clean proactive moves.
 - **Bienes Personales:** patrimony far below MNI **$384.728.044,57** → no obligation.
-- **Confidence: HIGH** — all 6 inputs clean, the call is pure arithmetic from a current reference figure, and it's a deterministic *trigger*, not a complex choice.
-- **Escalation:** none active today. It fires only if she takes local AR clients (mixed income) or her rolling-12 approaches the cat-K límite **$108.357.084,05** — neither in play at USD 30K/year.
+- **Confidence: HIGH** — all 6 inputs clean, the call is pure arithmetic from current reference figures, and it's a deterministic *trigger*, not a complex choice.
+- **Escalation:** none active today. It fires only if she takes local AR clients (mixed income) or her rolling-12 approaches the cat-K límite **$108.357.084,05** — neither in play at USD 30–39K/year.
 
 The only way Lucía gets hurt is by waiting. The posture is: commit to F→G, hand her the window, get out of the way.
 

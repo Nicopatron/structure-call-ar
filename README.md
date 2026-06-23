@@ -11,6 +11,6 @@ It is a folder of plain markdown. Drop the [`structure-call-ar/`](./structure-ca
 - The brief it was built to: [`brief.md`](./brief.md).
 - The landing page source is in [`landing/`](./landing) (Next.js).
 
-Calibrated junio 2026 against the monotributo table, the services-export regime, and the BCRA cambiario rules. USD↔ARS figures use the BNA comprador (~$1.150/USD); the folder recomputes against the day's rate and flags when ARCA's next table makes a categorization stale.
+Calibrated junio 2026 against the monotributo table, the services-export regime, and the BCRA cambiario rules. USD↔ARS figures use the BNA comprador (~$1.430/USD, BNA al 23-jun-2026); the folder recomputes against the day's rate and flags when ARCA's next table makes a categorization stale.
 
 Submission to Clief Notes Weekly Competition #8. MIT licensed.

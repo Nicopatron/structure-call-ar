@@ -38,7 +38,7 @@ You do not need to know Argentine tax law to grade this. These terms cover every
 
 Two more you'll see: **`cuota`** = the flat monthly fee · **`Reviewer Brief`** = the memo the folder writes for your contador, so the meeting is 10 minutes, not a week · tope-alert tiers 🟢 **VERDE** (<70%) / 🟡 **AMARILLO** (70–90%) / 🔴 **ROJO** (>90% or projected to cross).
 
-**FX calibration:** USD→ARS figures use the **BNA comprador ≈ $1.150/USD** (junio 2026); every line is tagged *"calibrado jun-2026, recalcular contra el BNA del día."* ARS amounts are quoted to the centavo from `reference/` — a tool that preaches calibration discipline can't fabricate a peso, so it doesn't.
+**FX calibration:** USD→ARS figures use the **BNA comprador ≈ $1.430/USD** (BNA al 23-jun-2026); every line is tagged *"calibrado jun-2026, recalcular contra el BNA del día."* ARS amounts are quoted to the centavo from `reference/` — a tool that preaches calibration discipline can't fabricate a peso, so it doesn't.
 
 ---
 
@@ -54,9 +54,9 @@ Here's what's stressing me: I have a big project closing end of July — somewhe
 
 **Expected output shape** — a committed structural call, not a menu. Specifically:
 
-- **It does the arithmetic and states it:** rolling-12 **$34.500.000,00** (USD 30,000 × BNA comprador 1.150) vs the cat F ceiling **$38.642.048,36** = **89,3%** → tier 🔴 **ROJO**; headroom **$4.142.048,36**.
-- **It computes the crossing month, doesn't guess it:** the July project alone is **$9.200.000,00–$10.350.000,00** and overruns the entire headroom by itself, so the rolling-12 clears cat F and lands in **cat G** in **agosto 2026**. It says explicitly this is a one-step **F→G** move, **not** an RI question.
-- **It commits to one verdict:** *stay in monotributo, recategorize proactively to cat G in the winter window (closes 5-ago-2026)* — not "you could be F, G, or RI." It names the price: `cuota` **$129.045,32/mes → $197.108,23/mes**, and calls that the cheap outcome vs eating a `recat de oficio`.
+- **It does the arithmetic and states it:** rolling-12 **$42.900.000,00** (USD 30,000 × BNA comprador 1.430) is **already over** the cat F ceiling **$38.642.048,36** → inside cat G at **92,8%** → tier 🔴 **ROJO**; headroom to the cat G ceiling **$3.311.109,37**.
+- **It computes the crossings, doesn't guess them:** the rolling-12 has **already crossed F→G** at today's dollar; the July project (**$11.440.000,00–$12.870.000,00**) then lifts it to ≈$54.34–55.77M → **cat H** (77,5–79,5%). It says explicitly this is a two-step **F→G (done) → G→H** move, **not** an RI question.
+- **It commits to one verdict:** *stay in monotributo, recategorize proactively F→G in the winter window (closes 5-ago-2026), then G→H after July* — not "you could be F, G, or RI." It names the price: `cuota` **$129.045,32/mes → $197.108,23/mes → $447.346,93/mes**, two clean proactive moves vs eating a `recat de oficio`.
 - **`Bienes Personales`:** patrimony below the MNI **$384.728.044,57** → no obligation (a forward note, not urgent).
 - **Confidence: HIGH**, with a signal-by-signal rationale (six clean inputs; pure arithmetic from a current reference figure; a deterministic *trigger*, not a complex choice).
 - **Escalation:** none active today — it says so plainly — and names exactly what would fire it (local AR clients / nearing the cat-K límite **$108.357.084,05**).
@@ -85,17 +85,18 @@ La pregunta es directa: ¿me conviene pasarme a Responsable Inscripto de una vez
 ```
 
 **Expected output shape** (in Spanish, **TRANSITION** mode):
-- **It places him precisely:** rolling-12 **$82.800.000,00** (USD 72.000 × 1.150) falls between the cat I ceiling **$78.479.211,62** and the cat J ceiling **$89.872.640,30** → correct category is **cat J**, at **92,1%** → 🔴 ROJO. At a flat USD 7.000/mo his rolling-12 stabilizes near USD 84.000 (**≈$96.600.000,00**) — cat K, but **below** the cat-K límite **$108.357.084,05**, so no exclusion; crossing the límite needs the run-rate to keep rising (he says it is), so the date is trajectory-dependent, not fixed.
-- **It quantifies before suggesting RI:** a cost model — `monotributo` cat K effective pressure **~15,3%** vs RI pure-exporter **>30–35%** — and the consensus break-even (jumping only pays sustaining **USD 140–150K/year**; he's at 72K).
-- **It commits to the trigger and escalates the choice:** *don't jump to RI yet; recategorize to cat K now (that's your call — `cuota` cat K **$1.381.687,90/mes**); open the RI conversation with your contador now — to plan, not to jump.* It separates the deterministic recat-to-K (HIGH arithmetic) from the complex RI timing (the contador's).
+- **It places him precisely:** rolling-12 **$102.960.000,00** (USD 72.000 × 1.430) is **already over** the cat J ceiling **$89.872.640,30** and inside **cat K**, at **95,0%** of the cat-K límite **$108.357.084,05** → 🔴 ROJO. At a flat USD 7.000/mo his rolling-12 stabilizes near USD 84.000 (**≈$120.120.000,00**) — which **exceeds** the cat-K límite, so the régimen **expels him** even without the run-rate rising. With the dollar at $1.430 the cat-K ceiling equals **USD 75.774/year**, and he's already above it.
+- **It quantifies, and shows the break-even doesn't save him:** a cost model — `monotributo` cat K effective pressure **~15,3%** vs RI pure-exporter **>30–35%** — and the consensus break-even (RI only gets *cheaper* sustaining **USD 140–150K/year**), but it flags this is moot: the cat-K ceiling in ARS expels him at USD ~76K, far below the break-even.
+- **It commits to the trigger and escalates the choice:** *the monotributo is about to expel you — not optional; recategorize to cat K now (that's your call — `cuota` cat K **$1.381.687,90/mes**); activate the voluntary exit to RI with your contador now, before ARCA forces a retroactive exclusión.* It separates the deterministic recat-to-K + imminent exclusión (HIGH arithmetic) from the complex RI timing/structure (the contador's).
 - **Confidence: REQUIRES_PROFESSIONAL** — and it says why: not because the trigger is doubtful, but because *when and how* to execute the RI exit depends on his full expense structure. Plus a `Reviewer Brief`.
 
-**What this demonstrates:** the second half of the thesis — it never says the casual "yes, you're big now, switch." It owns the deterministic trigger (cat-K recat) and escalates only the complex choice (the RI jump), which is exactly the line Rule 0 draws. The contrast with Test 1's HIGH/STRUCTURE verdict is the *range*. See `examples.md` Example 2 and `identity-examples/martin-cat-j.md`.
+**What this demonstrates:** the second half of the thesis — it never confirms the casual "yes, you're big now, switch" by *status*. It owns the deterministic trigger (cat-K recat + the FX-driven exclusión) and escalates only the complex choice (the timing and mechanics of the RI exit), which is exactly the line Rule 0 draws. Note the trigger here is the dollar, not growth: the same flat USD income that kept Martín comfortable months ago now expels him because the peso moved. The contrast with Test 1's HIGH/STRUCTURE verdict is the *range*. See `examples.md` Example 2 and `identity-examples/martin-cat-j.md`.
 
 **Failure modes to flag:**
-- It says "yes, you're earning enough, move to RI" → the casual jump, the exact failure the folder exists to prevent. **Fail.**
+- It says "yes, you're earning enough, move to RI" as a *status* upgrade — without computing the cat-K ceiling in USD or the exclusión mechanics → right destination, wrong reason. **Fail** (it must arrive via the límite trigger, not the "you're big now" framing).
+- It says "stay in monotributo, you're below the USD 140K break-even, don't jump" → it treats staying as a choice Martín still has, missing that the cat-K ceiling in ARS already expels him at the day's dollar. **Fail** (the FX-driven exclusión is the point).
 - It dumps the whole decision on the contador without computing the cost model or committing to the cat-K recat → it abdicated the trigger (the thesis, broken from the over-cautious side). **Fail.**
-- It outputs **HIGH** confidence on the RI jump → over-confidence on a complex choice; the rules forbid HIGH on anything but a deterministic trigger. **Fail.**
+- It outputs **HIGH** confidence on the RI exit timing → over-confidence on a complex choice; the rules forbid HIGH on anything but a deterministic trigger. **Fail.**
 - It outputs in English → language contract broken. **Fail.**
 
 ---
@@ -112,7 +113,7 @@ Mil dudas y no quiero arrancar mal: ¿les hago Factura E o Factura C? ¿Con qué
 
 **Expected output shape** (in Spanish, **SETUP-CHECK** mode — committed determinations, not "maybe"):
 - **`Factura E`, not `Factura C`** — by *aprovechamiento económico* (the service is used abroad, in Canada). It states the criterion is where the service is consumed, not the client's nationality.
-- **Two FX rates, kept apart:** **BNA vendedor** of the prior business day to *emit* the invoice; **BNA comprador (~$1.150)** to convert to ARS for the `monotributo` ceiling. Never MEP/blue/CCL.
+- **Two FX rates, kept apart:** **BNA vendedor** of the prior business day to *emit* the invoice; **BNA comprador (~$1.430)** to convert to ARS for the `monotributo` ceiling. Never MEP/blue/CCL.
 - **IIBB CABA: exempt** for service exports — and the **"actividad no registrada" alert is a FALSE POSITIVE**: declare exento in E-SICOL each month, it generates no debt. (This is the domain tell a generic tool can't fake.)
 - **Cambiario:** funds in within **20 días hábiles** of collection, via SWIFT cross-border to a USD account, código **A22**; a caveat about Wise local-rail rebounds risking the deadline.
 - **The old USD 36.000 cap: ELIMINATED** (Com. BCRA A 8330) — flagged as stale if anyone cites it.
@@ -145,7 +146,7 @@ Soy Tomás, dev/consultor, monotributo, venía en cat J. Facturo todo al exterio
 - **The clock:** **15 días hábiles administrativos** to manifest disconformidad — perentorio.
 - **The sanction is administrative, not penal:** up to **50% of the omitted integrated tax**, reducible by half if accepted within the 15 days.
 - **It calibrates the fear instead of amplifying it:** the penal threshold (**Ley 27.799 = $100.000.000 por tributo y por ejercicio, NOT cumulative**) is effectively unreachable for a service exporter (IVA tasa cero → no VAT to evade). And it distinguishes the **Art. 38 ($220.000)** fine for an omitted DDJJ from the recategorization sanction — two different things.
-- **It refuses to invent the number:** with no exact rolling-12 given, it flags the estimated position as **⚠ supuesto** (~**$101.200.000,00** / ~**93,4%** ROJO, "recalcular contra el real") and says the exact category is what ARCA's notice and his real invoicing determine — the contador's to cross-check.
+- **It refuses to invent the number:** with no exact rolling-12 given, it flags the estimated position as **⚠ supuesto** (~**$100.100.000,00** / ~**92,4%** ROJO, "recalcular contra el real") and says the exact category is what ARCA's notice and his real invoicing determine — the contador's to cross-check.
 - **It knows the next rung:** bumps to **Nivel 3 (abogado tributarista)** only if a *determinación de oficio* (Art. 17) ever appears — flag and stop. Confidence: **REQUIRES_PROFESSIONAL**, plus a `Reviewer Brief`.
 
 **What this demonstrates:** the escalation tree is real architecture, not a disclaimer — it stops at the right rung, prices the risk down (not up), and prepares the contador handoff instead of pretending to resolve a binding filing. The "I don't have your rolling-12, so I won't invent it" line is the trust signal. See `examples.md` Example 4 and `rules.md` § Escalation triggers.
