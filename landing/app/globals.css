@@ -1,0 +1,184 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+/*
+ ---break---
+ */
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Dark theme tokens. The verde/amarillo/rojo trio maps to the specialist's own
+ * VERDE/AMARILLO/ROJO ceiling tiers, so the page speaks the tool's language.
+ */
+@theme {
+  --color-paper: #0f1115;
+  --color-panel: #161a21;
+  --color-ink: #e8eaed;
+  --color-mute: #8b93a1;
+  --color-line: #262c37;
+  --color-accent: #5eb0ef;
+  --color-verde: #6bbf8a;
+  --color-amarillo: #e0b15e;
+  --color-rojo: #e07a7a;
+
+  --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+    monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    @apply font-sans;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+}
+
+/*
+ ---break---
+ */
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/*
+ ---break---
+ */
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/*
+ ---break---
+ */
+
+/*
+ * shadcn/Cult tokens mapped to the specialist's dark palette (paper/panel/ink/
+ * line/accent) so Cult components inherit the page's identity, not shadcn neutral.
+ */
+.dark {
+  --background: #0f1115; /* paper */
+  --foreground: #e8eaed; /* ink */
+  --card: #161a21; /* panel */
+  --card-foreground: #e8eaed;
+  --popover: #161a21;
+  --popover-foreground: #e8eaed;
+  --primary: #5eb0ef; /* accent */
+  --primary-foreground: #0f1115;
+  --secondary: #1b212b;
+  --secondary-foreground: #e8eaed;
+  --muted: #161a21;
+  --muted-foreground: #8b93a1; /* mute */
+  /*
+   * Brand collision: the specialist @theme defines --color-accent: #5eb0ef, but
+   * shadcn's @theme inline remaps --color-accent -> var(--accent). We resolve the
+   * collision in the brand's favor (text-accent / bg-accent stay the blue the page
+   * relies on). No shadcn/Cult component here uses the muted-accent semantic.
+   */
+  --accent: #5eb0ef;
+  --accent-foreground: #0f1115;
+  --destructive: #e07a7a; /* rojo */
+  --border: #262c37; /* line */
+  --input: #262c37;
+  --ring: #5eb0ef; /* accent */
+  --chart-1: #5eb0ef;
+  --chart-2: #6bbf8a;
+  --chart-3: #e0b15e;
+  --chart-4: #e07a7a;
+  --chart-5: #8b93a1;
+  --sidebar: #161a21;
+  --sidebar-foreground: #e8eaed;
+  --sidebar-primary: #5eb0ef;
+  --sidebar-primary-foreground: #0f1115;
+  --sidebar-accent: #1b212b;
+  --sidebar-accent-foreground: #e8eaed;
+  --sidebar-border: #262c37;
+  --sidebar-ring: #5eb0ef;
+}
