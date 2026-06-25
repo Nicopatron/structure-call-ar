@@ -10,14 +10,14 @@ import { TextureCard, TextureCardContent } from "@/components/ui/texture-card";
 
 const SAMPLES: { label: string; lang: string; text: string }[] = [
   {
-    label: "Lucía — cat F (JUDGE_GUIDE Test 1)",
+    label: "Lucía, cat F (JUDGE_GUIDE Test 1)",
     lang: "EN",
-    text: `Hi — I'm Lucía, product designer in Buenos Aires, on monotributo cat F. I bill one US SaaS client and pick up smaller US gigs. Over the last 12 months I've invoiced about USD 30,000, pretty steady at ~USD 3,500/month. Everything is export to US clients, all Factura E, IIBB CABA (exempt, I think). I have a contador I email a couple times a year, nothing regular.
+    text: `Hi, I'm Lucía, product designer in Buenos Aires, on monotributo cat F. I bill one US SaaS client and pick up smaller US gigs. Over the last 12 months I've invoiced about USD 30,000, pretty steady at ~USD 3,500/month. Everything is export to US clients, all Factura E, IIBB CABA (exempt, I think). I have a contador I email a couple times a year, nothing regular.
 
-Here's what's stressing me: I have a big project closing end of July — somewhere between USD 8K and 9K in one shot — plus my normal monthly run-rate keeps going. I don't own property, I keep my dollars in a US account and a local bank box, nothing fancy. Am I about to blow past my category? Do I need to do anything before I get in trouble?`,
+Here's what's stressing me: I have a big project closing end of July, somewhere between USD 8K and 9K in one shot, plus my normal monthly run-rate keeps going. I don't own property, I keep my dollars in a US account and a local bank box, nothing fancy. Am I about to blow past my category? Do I need to do anything before I get in trouble?`,
   },
   {
-    label: "Andrés — cat C (novel case)",
+    label: "Andrés, cat C (novel case)",
     lang: "ES",
     text: `Soy Andrés, dev en Córdoba, monotributo cat C. En los últimos 12 meses facturé como USD 14.000, todo exportación a un cliente de US, Factura E siempre. Tengo un proyecto que cierra en septiembre, unos USD 5.000 de una. IIBB Córdoba. No tengo contador fijo. ¿Me estoy por pasar de categoría con eso, o estoy tranquilo?`,
   },
@@ -44,7 +44,7 @@ export function VerdictDemo() {
       });
       const data = await res.json();
       if (res.status === 429) {
-        setError(data.verdict || "Rate limit reached — try again in a bit.");
+        setError(data.verdict || "Rate limit reached. Try again in a bit.");
       } else if (data.error) {
         setError(data.error);
       } else {
@@ -120,7 +120,7 @@ export function VerdictDemo() {
         <div aria-live="polite">
           {result.degraded && (
             <p className="text-sm text-amarillo border-l-2 border-amarillo/60 pl-4 mb-3">
-              The runtime flagged its own output instead of guessing — the trust signal,
+              The runtime flagged its own output instead of guessing: the trust signal,
               not a bug.
             </p>
           )}

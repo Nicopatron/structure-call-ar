@@ -28,7 +28,7 @@ const MAX_OUTPUT_TOKENS = 16000;
 const DEGRADE_MSG =
   "This live demo couldn't return a verdict it can stand behind. For a reliable, " +
   "figure-for-figure structural call, drop the structure-call-ar/ folder into a " +
-  "Claude Project (see JUDGE_GUIDE.md) — the same five tests run there with the full " +
+  "Claude Project (see JUDGE_GUIDE.md). The same five tests run there with the full " +
   "reference loaded. The worked Lucía case above shows the exact output shape.";
 
 export async function POST(req: Request) {
@@ -37,7 +37,7 @@ export async function POST(req: Request) {
   const limit = rateLimit(ip);
   if (!limit.ok) {
     return Response.json(
-      { degraded: true, verdict: "Rate limit reached — try again in a bit." },
+      { degraded: true, verdict: "Rate limit reached. Try again in a bit." },
       { status: 429, headers: { "retry-after": String(limit.retryAfter) } }
     );
   }
