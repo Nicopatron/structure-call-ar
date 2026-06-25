@@ -1,6 +1,6 @@
 # structure-call-ar
 
-**The structure call an Argentine freelancer billing in USD makes a few times a year — and almost always makes late.** Which `monotributo` category am I really in? Is this the year a US contract forces me out into `Responsable Inscripto`? Is my `Factura E` setup correct? `structure-call-ar` computes the answer, commits to it, and hands you a brief for your `contador`.
+**The structure call an Argentine freelancer billing in USD makes a few times a year. And almost always makes late.** Which `monotributo` category am I really in? Is this the year a US contract forces me out into `Responsable Inscripto`? Is my `Factura E` setup correct? `structure-call-ar` computes the answer, commits to it, and hands you a brief for your `contador`.
 
 I invoice US clients in USD from Argentina, and I learned the monotributo ceilings, the `recategorización` windows, and the `exclusión de oficio` retroactivity the expensive way — by almost missing a crossing and nearly eating a `recat de oficio`. The "which channel do I cash my dollars in" question is the easy one (a different specialist handles it). The one that actually costs you a year of back-tax is structural and episodic: **recategorize proactively or wait for ARCA's official pass? Am I about to be forced into RI? At what exact point does this stop being my call and become my contador's?** This folder is the filter *before* the contador that I wish I'd had on day one.
 
@@ -24,7 +24,7 @@ The rest is reference the operator loads on demand: [JUDGE_GUIDE.md](./JUDGE_GUI
 
 ## Why this exists (the problem)
 
-Reading the monotributo table takes **5 minutes**. Undoing a missed crossing takes **a year**: a `recat de oficio` with up to a 50% penalty on the omitted tax, or worse, an `exclusión de oficio` that retroactively makes you `Responsable Inscripto` from the day you crossed — with back-tax on `Ganancias` and `autónomos` for every month since. Most "tax help" either recites the table (a spreadsheet does that) or invents regulations with no calibration date and no idea when to stop (generic ChatGPT does that). This folder computes the *trigger* from your real numbers, commits to the structural verdict, and names the exact line where the decision becomes your contador's.
+Miss a crossing and ARCA finds it before you do: a `recat de oficio` with up to a 50% penalty on the omitted tax, or worse, an `exclusión de oficio` that retroactively makes you `Responsable Inscripto` from the day you crossed, with back-tax on `Ganancias` and `autónomos` for every month since. Most "tax help" either recites the table (a spreadsheet does that) or invents regulations with no calibration date and no idea when to stop (generic ChatGPT does that). This folder computes the *trigger* from your real numbers, commits to the structural verdict, and names the exact line where the decision becomes your contador's.
 
 It is **not a payment router.** The "Wise vs MEP vs Deel, what rate today" question belongs to a different specialist. This one decides *structure* — your category, the crossing month, the RI question — not *channel*.
 

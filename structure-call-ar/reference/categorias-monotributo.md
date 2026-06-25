@@ -129,6 +129,8 @@ El exportador cobra en USD pero **la categoría se determina por facturación en
 - **Tipo de cambio a efectos del tope del monotributo:** **BNA COMPRADOR** del **cierre del día hábil cambiario anterior** a la fecha de emisión del comprobante.
 - ⚠ **No confundir** con el TC para *emitir* la Factura E, que es **BNA VENDEDOR** del día hábil anterior. Son **dos cosas distintas**: vendedor para emitir, comprador para convertir a efectos del tope. (verificar_manual — matiz fino; confirmar con contador en caso límite.)
 
+**Tasa de referencia calibrada (junio 2026): $1.430/USD** (BNA comprador, 23-jun-2026). Usar este valor cuando el usuario no provee el TC del día; tagear todos los cálculos como *"calibrado jun-2026 — recalcular contra BNA comprador del día hábil anterior antes de actuar"*. No sustituir con un valor inferido de entrenamiento o de otra fuente — si no hay TC explícito en la consulta del usuario, usar $1.430 y taquearlo.
+
 ### Riesgo cambiario sobre la categoría
 Los ingresos en USD computan como ingresos brutos al TC del día. **Con devaluación del peso, los pesos nominales se disparan sin crecimiento real** → empuje a categorías superiores o a la exclusión, aunque en USD no haya crecido nada. Por eso el monitoreo mensual contra el BNA del día es necesario para quien cobra en USD.
 

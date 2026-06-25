@@ -7,7 +7,7 @@ It is a folder of plain markdown. Drop the [`structure-call-ar/`](./structure-ca
 ## Start here
 
 - New to it? [`structure-call-ar/README.md`](./structure-call-ar/README.md) onboards in under two minutes.
-- Grading it? [`structure-call-ar/JUDGE_GUIDE.md`](./structure-call-ar/JUDGE_GUIDE.md) is a five-test cold eval — glossary up top, one behavior per test.
+- Grading it? [`structure-call-ar/JUDGE_GUIDE.md`](./structure-call-ar/JUDGE_GUIDE.md) is a five-test cold eval: glossary up top, one behavior per test.
 - The brief it was built to: [`brief.md`](./brief.md).
 - The landing page source is in [`landing/`](./landing) (Next.js).
 

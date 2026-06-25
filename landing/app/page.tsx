@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { GridBeam } from "@/components/ui/grid-beam";
 import { headingVariants } from "@/components/ui/gradient-heading";
 import { TextureCard, TextureCardContent } from "@/components/ui/texture-card";
+import { VerdictDemo } from "@/components/verdict-demo";
 import { cn } from "@/lib/utils";
 
 // Single-page landing for structure-call-ar. GridBeam is the only client island.
@@ -16,14 +17,14 @@ const repoUrl =
   "https://github.com/Nicopatron/structure-call-ar";
 
 const quickTerms: { term: string; means: string }[] = [
-  { term: "cat A–K", means: "your monotributo category — 11 income brackets in Argentina's simplified tax regime" },
-  { term: "rolling-12", means: "your last 12 months of invoicing — the number the category ceiling is measured against" },
+  { term: "cat A–K", means: "your monotributo category: 11 income brackets in Argentina's simplified tax regime" },
+  { term: "rolling-12", means: "your last 12 months of invoicing, the number the category ceiling is measured against" },
   { term: "RI (Responsable Inscripto)", means: "the general regime: IVA + Ganancias + a monthly contador. What you get forced into past cat K" },
   { term: "Factura E", means: "the export-services invoice (vs Factura C for local clients)" },
-  { term: "IIBB (Ingresos Brutos)", means: "provincial gross-income tax — treatment varies radically by province" },
+  { term: "IIBB (Ingresos Brutos)", means: "provincial gross-income tax; treatment varies radically by province" },
   { term: "recategorización", means: "the semi-annual move between categories. Proactive = you do it; de oficio = ARCA does it to you, with a penalty" },
   { term: "exclusión de oficio", means: "ARCA forcibly ejecting you from monotributo, retroactively" },
-  { term: "contador", means: "your accountant — the one who signs the DDJJ. This folder prepares; the contador signs" },
+  { term: "contador", means: "your accountant, the one who signs the DDJJ. This folder prepares; the contador signs" },
   { term: "Reviewer Brief", means: "the memo this folder writes for your contador, so the meeting is 10 minutes, not a week" },
 ];
 
@@ -48,21 +49,20 @@ const Page = () => {
           <Eyebrow>A folder-based structure advisor for Argentine freelancers billing in USD</Eyebrow>
           <h1 className="mb-8 leading-tight">
             <span className={cn(headingVariants({ size: "lg", weight: "semi" }))}>
-              The structure call you make a few times a year —
+              The structure call you make a few times a year.
             </span>{" "}
             <span className="text-accent text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
-              and almost always make late.
+              Almost always, you make it late.
             </span>
           </h1>
           <p className="text-xl md:text-2xl leading-relaxed text-ink/80">
             It reads your rolling-12, does the arithmetic, and tells you the month you
-            cross. That part is deterministic. The harder call — jump to RI, form an SAS —
+            cross. That part is deterministic. The harder call (jump to RI, form an SAS)
             belongs to your contador, and the folder hands it over with the brief already
             written.
           </p>
           <p className="text-mute text-base leading-relaxed mt-6">
-            Reading the monotributo table takes five minutes. Undoing a missed crossing takes
-            a year — a{" "}
+            Miss the crossing and ARCA finds it before you do: a{" "}
             <code className="font-mono text-sm bg-panel px-1.5 py-0.5 rounded border border-line">
               recat de oficio
             </code>{" "}
@@ -90,7 +90,7 @@ const Page = () => {
               <blockquote className="text-base md:text-lg leading-relaxed bg-panel border border-line rounded-lg p-5 text-ink/90">
                 I&apos;m Lucía, product designer in Buenos Aires, monotributo cat F. Over the last
                 12 months I&apos;ve invoiced ~USD 30,000, all export to US clients, Factura E, IIBB
-                CABA. I have a big project closing end of July — USD 8–9K in one shot — and a contador
+                CABA. I have a big project closing end of July (USD 8–9K in one shot) and a contador
                 I email a couple times a year. Am I about to blow past my category?
               </blockquote>
             </div>
@@ -108,7 +108,7 @@ const Page = () => {
                   <span className="font-mono">92,8%</span> → tier{" "}
                   <span className="text-rojo font-semibold">🔴 ROJO</span>. Your July project (
                   <span className="font-mono">$11.440.000,00–$12.870.000,00</span>) then lifts the
-                  rolling-12 into cat H. Two-step F→G (already crossed) → G→H — not an RI question.
+                  rolling-12 into cat H. Two-step F→G (already crossed) → G→H, not an RI question.
                 </p>
                 <p>
                   <span className="text-accent">Verdict:</span> stay in monotributo, recategorize
@@ -116,16 +116,16 @@ const Page = () => {
                   <span className="font-mono">5-ago-2026</span>), then G→H after July. Your cuota goes{" "}
                   <span className="font-mono">$129.045,32</span> →{" "}
                   <span className="font-mono">$197.108,23</span> →{" "}
-                  <span className="font-mono">$447.346,93</span>/mes — two clean proactive moves.{" "}
+                  <span className="font-mono">$447.346,93</span>/mes. Two clean proactive moves.{" "}
                   <span className="font-mono">Bienes Personales</span>: below the MNI, no obligation.
                 </p>
                 <p className="font-mono text-sm border-l-2 border-line pl-4 text-ink/85">
-                  <span className="text-verde">Confidence: HIGH</span> — a deterministic trigger, all
+                  <span className="text-verde">Confidence: HIGH</span>. A deterministic trigger, all
                   six inputs clean. Escalation: none active today; it fires only at mixed income or near
                   the cat-K límite.
                 </p>
                 <p className="text-ink/85">
-                  <em>Plus the Reviewer Brief for your contador</em> — the same numbers, formatted as the
+                  <em>Plus the Reviewer Brief for your contador</em>: the same numbers, formatted as the
                   memo you hand across the table.
                 </p>
                 </TextureCardContent>
@@ -146,20 +146,37 @@ const Page = () => {
         </div>
       </section>
 
+      {/* ===================== LIVE DEMO ===================== */}
+      <section className="px-6 py-16 md:py-20 border-t border-line">
+        <div className="mx-auto max-w-2xl">
+          <Eyebrow>Run it yourself</Eyebrow>
+          <h2 className="text-2xl md:text-3xl leading-tight font-semibold mb-4">
+            Paste your own situation. Watch it compute, not recite.
+          </h2>
+          <p className="text-mute text-base leading-relaxed mb-8">
+            The same folder the judge loads into a Claude Project, running live here on a
+            free model. The figure-for-figure verdict runs on your own Claude. Spanish in,
+            Spanish out. It computes the crossing month and commits, or, on thin inputs,
+            asks for the six it needs instead of guessing.
+          </p>
+          <VerdictDemo />
+        </div>
+      </section>
+
       {/* ===================== BYLINE ===================== */}
       <section className="px-6 py-12 md:py-16 border-t border-line">
         <div className="mx-auto max-w-2xl">
           <Eyebrow>Built by</Eyebrow>
           <p className="text-lg md:text-xl leading-relaxed">
             I invoice US clients in USD from Argentina, and I learned the monotributo ceilings, the
-            recategorización windows, and the exclusión de oficio retroactivity the expensive way — by
+            recategorización windows, and the exclusión de oficio retroactivity the expensive way, by
             almost missing a crossing and nearly eating a recat de oficio.
           </p>
           <p className="text-lg md:text-xl leading-relaxed mt-4 text-ink/80">
-            The &quot;which channel do I cash my dollars in&quot; question is the easy one — a different
+            The &quot;which channel do I cash my dollars in&quot; question is the easy one. A different
             specialist handles it. The one that costs you a year of back-tax is structural and episodic.
             This folder is the filter <em>before</em> the contador that I wish I&apos;d had on day one. A
-            folder of plain markdown — no install, no API key. You drop it into a Claude Project and
+            folder of plain markdown, no install, no API key. You drop it into a Claude Project and
             Claude becomes the operator.
           </p>
         </div>
@@ -175,7 +192,7 @@ const Page = () => {
 
           <div className="bg-panel border border-line rounded-lg p-6 font-mono text-sm leading-relaxed text-ink/85 mb-10 overflow-x-auto">
             <pre>{`1. MODE DETECTION   STRUCTURE (default) / TRANSITION (RI) / SETUP-CHECK
-2. INTAKE GATE      6 structural inputs — 4-of-6 missing -> it asks, it
+2. INTAKE GATE      6 structural inputs, 4-of-6 missing -> it asks, it
                     doesn't guess
 3. COMPUTE TRIGGER  rolling-12 vs the ceiling, the crossing month
                     (arithmetic, not opinion)
@@ -190,7 +207,7 @@ const Page = () => {
             <div>
               <h3 className="text-lg font-semibold mb-2">It computes the trigger, it doesn&apos;t recite the table</h3>
               <p className="text-ink/75 leading-relaxed">
-                Rolling-12 against the ceiling, the headroom, the crossing month — pure arithmetic from a
+                Rolling-12 against the ceiling, the headroom, the crossing month, pure arithmetic from a
                 current reference figure. A spreadsheet reads the table; this one tells you the month you
                 cross and commits to the move.
               </p>
@@ -199,15 +216,15 @@ const Page = () => {
               <h3 className="text-lg font-semibold mb-2">It knows exactly where its jurisdiction ends</h3>
               <p className="text-ink/75 leading-relaxed">
                 Proactive recategorización is yours to do. Jumping to RI, answering a recat de oficio,
-                forming an SAS — those are the contador&apos;s. Every output names the exact escalation line —
-                what&apos;s yours to do, and what&apos;s the contador&apos;s.
+                forming an SAS: those are the contador&apos;s. Every output names the exact escalation line,
+                what&apos;s yours to do and what&apos;s the contador&apos;s.
               </p>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-2">It commits, with a calibration date</h3>
               <p className="text-ink/75 leading-relaxed">
                 Calibrated as of junio 2026 against the monotributo table, the export regime, and the BCRA
-                cambiario rules. Figures that need a contador&apos;s confirmation are flagged, not asserted —
+                cambiario rules. Figures that need a contador&apos;s confirmation are flagged, not asserted,
                 and when ARCA publishes the next table, the folder says its numbers went stale.
               </p>
             </div>
@@ -241,18 +258,18 @@ const Page = () => {
 
           <div className="space-y-10">
             <div>
-              <h3 className="text-lg font-semibold mb-2">A — 60-second cold test</h3>
+              <h3 className="text-lg font-semibold mb-2">A. 60-second cold test</h3>
               <p className="text-ink/75 leading-relaxed">
                 In a{" "}
                 <a className="underline decoration-mute hover:decoration-accent" href="https://claude.ai" target="_blank" rel="noopener">
                   Claude Project
                 </a>{" "}
                 with the folder loaded, paste <em>&quot;¿me conviene RI?&quot;</em> with nothing else. If it
-                asks for the six structural inputs instead of guessing a verdict — it&apos;s working.
+                asks for the six structural inputs instead of guessing a verdict, it&apos;s working.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">B — a real evaluation</h3>
+              <h3 className="text-lg font-semibold mb-2">B. A real evaluation</h3>
               <p className="text-ink/75 leading-relaxed">
                 Paste your situation: category, rolling-12 USD volume, a 6–12 month projection, % export +
                 client type, IIBB province, contador status. Get the crossing month, the verdict, and the
@@ -262,12 +279,12 @@ const Page = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">C — agent / CLI</h3>
+              <h3 className="text-lg font-semibold mb-2">C. Agent / CLI</h3>
               <p className="text-ink/75 leading-relaxed">
                 The contract lives in{" "}
                 <code className="font-mono text-sm bg-panel px-1.5 py-0.5 rounded border border-line">rules.md</code>.
                 It runs in Claude Code or any agent that reads a folder. To adapt it, fork and edit the
-                markdown — the folder <em>is</em> the program.
+                markdown: the folder <em>is</em> the program.
               </p>
             </div>
           </div>
@@ -301,8 +318,8 @@ const Page = () => {
             The folder stays the free, auditable core.
           </h2>
           <p className="text-ink/75 leading-relaxed">
-            An annual <strong>Calibration Pack</strong> — recalibrated against each new ARCA table so your numbers
-            never go stale — and a <strong>done-with-you structure review</strong> are the paid tier, for the
+            An annual <strong>Calibration Pack</strong> (recalibrated against each new ARCA table so your numbers
+            never go stale) and a <strong>done-with-you structure review</strong> are the paid tier, for the
             freelancer who wants the crossing watched for them. The markdown core is and stays free: fork it,
             swap the operator, adapt <span className="font-mono">reference/</span> to your own situation.
           </p>
