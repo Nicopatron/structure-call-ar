@@ -354,14 +354,7 @@ const Page = () => {
       <footer className="px-6 py-12 border-t border-line">
         <div className="mx-auto max-w-2xl">
           <p className="text-mute text-sm leading-relaxed">
-            MIT licensed.
-            <span className="block mt-2">
-              Submission to{" "}
-              <a className="underline decoration-mute hover:decoration-accent" href="https://www.skool.com/" target="_blank" rel="noopener">
-                Clief Notes
-              </a>{" "}
-              Weekly Competition #8.
-            </span>
+            An open tool for Argentine freelancers billing in USD. MIT licensed.
           </p>
         </div>
       </footer>

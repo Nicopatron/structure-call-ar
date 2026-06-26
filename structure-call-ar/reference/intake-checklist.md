@@ -256,7 +256,7 @@ El "creo que" / "no sé bien" es hedging. Pero el hecho — clientes en el exter
 |---|-------|------------------------------|------------------------------|-------------------------------|
 | | **Prompt** | *"Soy dev, monotributo cat F, facturo ~USD 3.500/mes a un cliente de EE.UU. hace un año, en CABA, tengo contadora. ¿Estoy bien donde estoy?"* | *"¿Me conviene pasarme a responsable inscripto?"* | *"Monotributo, facturo ~USD 4K/mes afuera + $2M/mes a clientes de acá, vengo creciendo, en PBA, sin contador. ¿Me paso de tope?"* |
 | 1 | Régimen actual | ✅ monotributo cat F | ❌ no dice | ✅ monotributo |
-| 2 | Facturación 12m móviles | ✅ ~USD 3.500/mes → ~$5,1K USD anuales × $1.450 ≈ rolling-12 ~$60,9M ARS (BNA aprox.) | ❌ no dice | ✅ USD 4K + $2M/mes locales |
+| 2 | Facturación 12m móviles | ✅ ~USD 3.500/mes × 12 = ~USD 42.000 anuales × $1.430 ≈ rolling-12 ~$60,1M ARS (calibrado jun-2026) | ❌ no dice | ✅ USD 4K + $2M/mes locales |
 | 3 | Proyección 6–12m | ⚠ no dice → supuesto plano | ❌ no dice | ✅ "vengo creciendo" |
 | 4 | % exterior + contraparte | ✅ 100% exterior, cliente EE.UU. genuino → `Factura E` | ❌ no dice | ✅ exterior + locales (proporción dada) |
 | 5 | Jurisdicción IIBB | ✅ CABA (exenta) | ❌ no dice | ✅ PBA |

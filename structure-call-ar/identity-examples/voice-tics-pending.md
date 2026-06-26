@@ -96,10 +96,6 @@ Items que pasaron de aquí a `rules.md` / `reference/`:
 
 - Output contract: [`../rules.md`](../rules.md)
 - Personas pobladas (siblings en este folder): `lucia-cat-f.md`, `martin-cat-j.md`, `sofia-setup.md` (cat F STRUCTURE / cat J TRANSITION / primera export SETUP-CHECK)
-- Audit protocol (cross-check antes de promover): [`../../../_config/audit-protocol.md`](../../../_config/audit-protocol.md)
-- ICM guidelines (catch file pattern): [`../../../_config/icm-guidelines.md`](../../../_config/icm-guidelines.md) § Catch file self-improving
-
-**Nota path:** los refs a `../../../_config/` asumen specialist vive en `competitions/comp-N/specialist-name/`. Si shipped standalone, replace con absolute URLs.
 
 ---
 

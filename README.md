@@ -13,4 +13,4 @@ It is a folder of plain markdown. Drop the [`structure-call-ar/`](./structure-ca
 
 Calibrated junio 2026 against the monotributo table, the services-export regime, and the BCRA cambiario rules. USD↔ARS figures use the BNA comprador (~$1.430/USD, BNA al 23-jun-2026); the folder recomputes against the day's rate and flags when ARCA's next table makes a categorization stale.
 
-Submission to Clief Notes Weekly Competition #8. MIT licensed.
+MIT licensed.

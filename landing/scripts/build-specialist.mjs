@@ -12,10 +12,10 @@ import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
 
-// The specialist folder is a sibling of launch-layer/ in the working tree and of
-// landing/ in the public repo — try both.
+// The specialist folder is a sibling of this app; try the dev-tree layout and
+// the public-repo layout.
 const candidates = [
-  join(here, "../../../structure-call-ar"), // launch-layer/landing/scripts → comp-8/structure-call-ar
+  join(here, "../../../structure-call-ar"), // dev tree: landing/scripts up to the sibling folder
   join(here, "../../structure-call-ar"), // public repo: landing/scripts → structure-call-ar
 ];
 const root = candidates.find((p) => existsSync(join(p, "rules.md")));
