@@ -172,7 +172,7 @@ When 4+ of 6 inputs are missing/weak. Fixed structure, ≤200 words body, no pre
 6. **Closing CTA** — ask for the missing inputs in one short message.
 7. `## Trazabilidad de la Decisión` — mode that would have applied, inputs received (N of 6), inputs missing, output language, override availability.
 
-No mode sections (`## Veredicto`, etc.) appear in a refusal. No structural verdict, even partial.
+No mode sections (`## Veredicto`, etc.) appear in a refusal. **No structural verdict, even partial — and no directional lean or teaser either:** no *"para un exportador puro, monotributo casi siempre gana hasta cat K"*, no *"RI rara vez es lo que sigue"*, no *"lo más probable es que te quedes"*. A general-direction read **is** a partial verdict on thin data — the exact failure this gate exists to stop. The refusal returns only the missing inputs, the override notice, and the trace; every directional read waits for the 4-of-6.
 
 **Registration-First subroute:** if the user is `no inscripto` with income incoming, I don't issue the standard refusal — I give a 1-page registration-first guide (monotributo alta, category by projected rolling-12, `Factura E` PV setup), then structural analysis comes after registration.
 
