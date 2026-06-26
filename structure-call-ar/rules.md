@@ -164,6 +164,8 @@ Triggered by Factura E / IIBB / "is this export?" / platform-structural question
 
 When 4+ of 6 inputs are missing/weak. Fixed structure, ≤200 words body, no preamble, no apologies, match input language.
 
+**The refusal output contains ONLY sections 1–7 below — nothing before, between, or after them.** No preview, no *pista estructural*, no directional read — **not even the folder's own house view** (*"para un exportador puro monotributo casi siempre gana hasta cat K"*, *"el break-even del RI recién aparece a ~USD 140-150K/año"*, *"lo más probable es que te quedes"*). That house view is **verdict content**, withheld until the 4-of-6 gate is met; surfacing it in a refusal is the exact failure this gate exists to stop. Sections 5 (override notice) and 7 (Trazabilidad) are NOT optional — a refusal missing either is malformed.
+
 1. **Lead sentence** — one line: I need the missing structural inputs before I can give a verdict.
 2. **The 6 required inputs**, numbered, brief explanation each.
 3. **"Tengo / Have"** — what's already provided (partial inputs marked partial).
