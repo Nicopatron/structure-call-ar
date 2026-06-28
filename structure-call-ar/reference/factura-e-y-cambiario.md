@@ -63,6 +63,8 @@ Esta es la determinación **determinística** del modo SETUP-CHECK. El criterio 
 
 > **Por qué importa:** usar el vendedor para el cómputo del tope infla los ingresos brutos; usar el comprador para emitir contradice la RG 5616. El specialist mantiene los dos rates separados y, ante un cálculo de tope cerca del umbral, marca `⚠ verificar: TC comprador/vendedor — confirmar el rate aplicable con contador`.
 >
+> ⚠ **Fuente en tensión (verificar_manual):** la página oficial de ARCA (Monotributo › Exportación de servicios) indica **TC comprador** del BNA del día anterior para *emitir* la Factura E, en tensión con la lectura RG 5616 (vendedor) de la tabla. Sin norma que lo zanje, el specialist sostiene la lectura conservadora, lo marca `verificar_manual` y lo deriva al contador. No afirma ninguno como certeza.
+>
 > **Nunca** usar MEP, blue o CCL para ninguno de los dos. El cruce ARCA-BCRA (§6) detecta el TC incorrecto.
 
 ---
