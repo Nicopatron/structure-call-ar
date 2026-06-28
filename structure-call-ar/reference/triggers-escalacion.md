@@ -29,12 +29,12 @@ Estas son las situaciones donde el trigger es **determinístico** y la respuesta
 | **Emitir Factura E** (exportación de servicios) | Determinístico por *aprovechamiento económico*: usado en el exterior = E, usado en AR = C. El folder dicta el if/then; yo redacto. | HIGH |
 | **Recategorización voluntaria** | Aritmética sobre los ingresos brutos de los 12 meses móviles + el parámetro más restrictivo (ingresos/energía/alquiler/m²) contra la tabla de `reference/categorias-monotributo.md`. Leo el número, hago la cuenta, digo el mes. | HIGH |
 | **Alta inicial sin deuda** | Registro nuevo, sin pasivo fiscal previo. La categoría se determina por el rolling-12 proyectado. | HIGH |
-| **Categorizar con ingresos 100% exterior** | Determinístico: los cobros por exportación con Factura E **no computan** al tope a efectos de *categorizar* (no te empujan de categoría a categoría). Lo resuelvo con la conversión a ARS al BNA. | HIGH |
+| **Categorizar con ingresos 100% exterior** | Determinístico: los cobros por exportación con Factura E **computan** a los ingresos brutos para *categorizar* como cualquier ingreso (los ingresos del exterior se consideran en la recategorización). Lo resuelvo con la conversión a ARS al BNA y la comparación contra la tabla. | HIGH |
 | **Plan de pagos simple** | Plan de facilidades estándar sobre deuda corriente, sin determinación de oficio de por medio. | HIGH |
 
-**Matiz que rompe el Nivel 1 (lo subo a Nivel 2):** aunque las Factura E no te empujan de categoría a categoría *para categorizar*, **el total facturado no puede exceder el tope de Cat K** ($108.357.084,05/año, vigente Feb–Jul 2026). La interpretación oficial de ARCA es la restrictiva. Si el usuario está cerca de ese límite con ingresos mixtos → es Nivel 2 (tope ambiguo), no Nivel 1.
+**Matiz que rompe el Nivel 1 (lo subo a Nivel 2):** la categorización con export es determinística (las E computan a los ingresos brutos), pero **el total facturado no puede exceder el tope de exclusión de Cat K** ($108.357.084,05/año, vigente Feb–Jul 2026). La interpretación oficial de ARCA es la restrictiva. Si el usuario está cerca de ese límite con ingresos mixtos → es Nivel 2 (tope ambiguo), no Nivel 1.
 
-⚠ verificar: si las Factura E computan al límite de la categoría máxima. ARCA sostiene que SÍ (lectura restrictiva, la que adopto). Estudios contables (Contablix, Piacentini) sostienen que no. No hay RG que lo zanje. En casos límite escalo a contador.
+⚠ verificar: si las Factura E computan contra el **tope de exclusión** de la categoría máxima (cat K). ARCA sostiene que SÍ (lectura restrictiva, la que adopto). Estudios contables (Contablix, Piacentini) sostienen que no. No hay RG que lo zanje. (La categorización normal sí las computa, eso está zanjado.) En casos límite escalo a contador.
 
 ---
 

@@ -35,7 +35,7 @@ La **Factura Electrónica clase E** (Exportación) es obligatoria para **toda ex
 | Condición IVA del receptor | Campo obligatorio desde 15/04/2025 (RG 5616) |
 | Moneda de cancelación | Informar si se cancela en moneda extranjera o en pesos (obligatorio RG 5616) |
 | Tipo de cambio para **emitir** | BNA **vendedor** divisa, cierre del **día hábil cambiario anterior** a la emisión (ver §3) |
-| Cómputo al tope monotributo | Los cobros por exportación **NO computan** en el tope anual a efectos de *categorizar* (no te empujan de categoría) — pero ver `monotributo-*` para el matiz del límite de Cat K |
+| Cómputo al tope monotributo | Los cobros por exportación **SÍ computan** en los ingresos brutos a efectos de *categorizar* (convertidos a ARS al BNA): los ingresos del exterior se consideran en la recategorización como cualquier ingreso. Zona gris separada (lectura conservadora de ARCA): si además cuentan contra el **tope de exclusión de cat K**. Ver `triggers-escalacion.md` §Nivel 2. |
 
 ---
 
@@ -45,7 +45,7 @@ Esta es la determinación **determinística** del modo SETUP-CHECK. El criterio 
 
 | Caso | Comprobante | Razón |
 |---|---|---|
-| Servicio **usado en el exterior** (cliente extranjero que lo aprovecha fuera de AR) | **Factura E** | Exportación de servicios. IVA 0%, no suma al tope a efectos de categorizar, exento/no gravado de IIBB (según provincia). |
+| Servicio **usado en el exterior** (cliente extranjero que lo aprovecha fuera de AR) | **Factura E** | Exportación de servicios. IVA 0%, computa a los ingresos brutos para categorizar (ARS al BNA), exento/no gravado de IIBB (según provincia). |
 | Servicio **usado en Argentina**, aunque el cliente sea extranjero | **Factura C** | NO es exportación. Ej.: empresa española que contrata para operar su sucursal en Buenos Aires. Suma al tope, paga IIBB, IVA según corresponda. |
 
 > **Regla operativa:** ante "mi cliente es de afuera", el specialist NO asume Factura E. Pregunta/determina **dónde se usa el servicio**. La nacionalidad del cliente es ruido; el aprovechamiento económico es la señal.
