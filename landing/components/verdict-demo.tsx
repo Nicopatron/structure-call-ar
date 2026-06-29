@@ -73,7 +73,7 @@ export function VerdictDemo() {
               : "border-line text-mute hover:text-accent hover:border-accent"
           }`}
         >
-          Texto libre (AI)
+          Free text (AI)
         </button>
         <button
           type="button"
@@ -84,7 +84,7 @@ export function VerdictDemo() {
               : "border-line text-mute hover:text-accent hover:border-accent"
           }`}
         >
-          Form exacto (determinista)
+          Exact form (deterministic)
         </button>
       </div>
 
