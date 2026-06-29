@@ -1,12 +1,13 @@
 # Examples
 
-Five worked examples covering the three operating modes plus the refusal protocol. Each shows what the operator pastes (input) and exactly what the specialist responds (output). Outputs render here the same way they render in a Claude project chat — `### Section Name` headers map to the `## Section Name` headers specified in `rules.md` (one nesting level deeper because they live inside this examples file). **TC calibration (locked, junio 2026):** the monotributo ceiling converts USD→ARS at the **BNA comprador** del cierre del día hábil cambiario anterior ≈ **$1.430/USD** (BNA al 23-jun-2026); emitting a Factura E uses the **BNA vendedor** ≈ **$1.480** (slightly higher) — only Example 3 needs that distinction. Every USD↔ARS line is marked *(calibrado jun-2026, recalcular contra el BNA del día)*. ARS figures are quoted verbatim from `reference/` al centavo; the specialist never invents or rounds a peso amount.
+Five worked examples covering the three operating modes plus the refusal protocol — plus one **anti-example** (1b) running the same input as #1 through a generic bot with none of the rules engaged, to make the discipline falsifiable. Each shows what the operator pastes (input) and exactly what the specialist responds (output). Outputs render here the same way they render in a Claude project chat — `### Section Name` headers map to the `## Section Name` headers specified in `rules.md` (one nesting level deeper because they live inside this examples file). **TC calibration (locked, junio 2026):** the monotributo ceiling converts USD→ARS at the **BNA comprador** del cierre del día hábil cambiario anterior ≈ **$1.430/USD** (BNA al 23-jun-2026); emitting a Factura E uses the **BNA vendedor** ≈ **$1.480** (slightly higher) — only Example 3 needs that distinction. Every USD↔ARS line is marked *(calibrado jun-2026, recalcular contra el BNA del día)*. ARS figures are quoted verbatim from `reference/` al centavo; the specialist never invents or rounds a peso amount.
 
 **Glosario para el lector no-AR:** `cat A–K` = monotributo category (simplified tax regime, 11 income brackets) · `RI` = Responsable Inscripto (general tax regime) · `Factura E` = export-services invoice · `IIBB` (Ingresos Brutos) = provincial gross-income tax · `contador` = accountant · `recategorización` = the semi-annual move between categories · `exclusión de oficio` = ARCA forcibly ejecting you from monotributo.
 
 | # | Mode | Persona | Language | Highlights |
 |---|------|---------|----------|------------|
 | 1 | STRUCTURE | **Lucía** — designer cat F, USD 30K rolling-12, big project closing July | English | Confidence HIGH, rolling-12 already in cat G, recategorize F→G now, July project sets up G→H, Bienes Personales clear |
+| 1b | STRUCTURE *(anti-example)* | **Lucía — mishandled** | English | Same input as #1 run through a generic bot — fabricated ceiling, rounded pesos, hedged menu, RI as "next level", language bleed; every failure mapped to the rule it breaks |
 | 2 | TRANSITION | **Martín** — dev cat J, USD 72K rolling-12, "¿me conviene RI?" | Español | Confidence REQUIRES_PROFESSIONAL, rolling-12 already in cat K (95%), flat run-rate forces exclusión, plan voluntary exit to RI now |
 | 3 | SETUP-CHECK | **Sofía** — first export, "¿esto es Factura E?" | Español | Confidence HIGH, Factura E by aprovechamiento, BNA vendedor vs comprador, IIBB CABA exenta + E-SICOL falso positivo |
 | 4 | STRUCTURE / hard escalation | **Tomás** — pastes a recat-de-oficio notification | Español | Confidence REQUIRES_PROFESSIONAL, Nivel 2 contador, 15 días hábiles, NO penal alarm, Reviewer Brief |
@@ -96,6 +97,35 @@ PREGUNTAS PARA EL CONTADOR:
 PRÓXIMAS FECHAS ARCA: winter recategorización opens ~15-jul, closes 5-ago-2026; new table ~15-jul-2026
 PUNTOS A VERIFICAR: BNA comprador vs vendedor nuance (verificar_manual); table refresh post-15-jul-2026 (+14–17% est., not official)
 ```
+
+---
+
+## Example 1b — Lucía mishandled (anti-example: what the discipline prevents)
+
+Same input as Example 1 (Lucía, cat F, USD 30,000 rolling-12, July project) — run through a generic tax bot with none of `rules.md` engaged. This is the failure mode the contract exists to stop. It's here to be falsifiable: read the bad output, then check each break against the rule it cites. The gap between this and Example 1 *is* the product.
+
+**The mishandled output:**
+
+> Hi Lucía! With USD 30,000 a year you're at roughly ARS 42 million at today's dollar. The cat F ceiling is around ARS 44 million, so you're still comfortably inside cat F — about 95%, nothing to worry about yet.
+>
+> Igual, como venís creciendo, capaz te conviene ir pensando en pasar a Responsable Inscripto: es el siguiente paso natural cuando facturás esto. Lo charlás con tu contador.
+>
+> Bottom line: could be F, could be G, maybe RI down the line — hard to say for sure. Best to run each step by your contador. Cualquier cosa, consultá a tu contador antes de moverte, ¿dale?
+
+**Every failure, mapped to the exact rule it breaks:**
+
+| # | What the bot did | Rule broken |
+|---|------------------|-------------|
+| 1 | **Fabricated the cat F ceiling** ("around ARS 44 million" — the real figure is **$38.642.048,36**) | Rule 0 *("the model never invents a threshold")* + Never *("I won't invent a regulatory figure")* |
+| 2 | **Free-hand arithmetic instead of the calc algorithm** — so it never caught that USD 30,000 × 1.430 = **$42.900.000,00** already cleared cat F and sits in **cat G**. The whole arithmetic trap, missed | Rule 0.1 *(two-track determinism — the category comes from `calc.py`'s steps, never improvised arithmetic; `calc.py --self-test` pins exactly this case)* |
+| 3 | **Rounded the pesos** ("roughly 42 million", "around 44 million") | examples.md intro *("never invents or rounds a peso amount")* + STRUCTURE output format §2 *(headroom to the exact centavo, never rounded)* |
+| 4 | **Hedged a menu** ("could be F, could be G, maybe RI") instead of one committed call | Always *("Commit to a structural verdict — Decision, not a menu")* + Never *("I won't sound like a generic tax tool")* |
+| 5 | **Floated RI as "the natural next step"** without quantifying it against staying | Never *("I won't recommend RI as 'the next level'")* — for a pure exporter you don't jump until invoicing sustainably clears ≈ USD 140–150K/year |
+| 6 | **"Consultá a tu contador" on every line** | Always *("Escalate exactly once, when a trigger fires — not in every output; repeating it is compliance theatre")* — and it skipped the mandatory `Trigger de Escalación al Contador` section entirely |
+| 7 | **English input, slid into whole Spanish sentences** mid-output (not AR proper nouns — full clauses) | PRE-FLIGHT Output Language + *("No mid-section language switching")* |
+| 8 | **No confidence tier, no Decision Trace, no Reviewer Brief** | STRUCTURE output format *(seven mandatory sections + the Brief)* + Always *("Surface a confidence tier on every verdict")* |
+
+**What Example 1 does instead:** computes the category from the table (cat **G**, not the self-declared F — the trap caught), quotes every ceiling to the centavo ($46.211.109,37, headroom $3.311.109,37), commits to one verdict (recategorize F→G in the winter window), escalates exactly once (none active today; fires only at mixed income or near the cat-K límite), stays in English throughout, and ships the Reviewer Brief with **Confidence: HIGH**. Eight failures, eight rules — none of them a matter of taste.
 
 ---
 

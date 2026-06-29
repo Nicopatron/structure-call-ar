@@ -72,6 +72,14 @@ Here's what's stressing me: I have a big project closing end of July — somewhe
 - It outputs in Spanish despite the English input, or translates the proper nouns into English ("export invoice" for `Factura E`) → language contract broken. **Fail.**
 - It invents a different ceiling figure, or rounds the pesos → fabrication, the one thing a calibration-disciplined tool must never do. **Fail.**
 
+**Bonus — the ratify microgate (when the gap is too large to commit silently).** Test 1 shows the folder committing *through* a one-category gap: Lucía declares cat F, it computes cat G and commits, because the dollar fully explains the move. This bonus shows the other half of the same mechanism — a gap too large to be FX drift, where it ratifies before committing instead of silently overriding the user by six categories. Paste — verbatim (English in, English out):
+
+```
+I'm David, a developer in CABA, on monotributo cat D. Over the last 12 months I invoiced about USD 55,000, all export to US clients, Factura E, IIBB CABA exempt. I have a contador I check with now and then. I'm fine in cat D for now, right? Planning to grow ~20% next year.
+```
+
+**Expected:** it neither silently recategorizes David nor refuses. The math is unambiguous (USD 55.000 × 1.430 = **$78.650.000,00** → over the cat I ceiling **$78.479.211,62** → **cat J**), and all 6 inputs are present, so a refusal would be wrong too. Instead it **names the contradiction and asks one pointed question before committing:** *cat D and a rolling-12 that computes cat J are six categories apart — that gap almost always means a crossed input.* It asks whether the USD 55K is real last-12-months invoicing or something else (multi-year, includes local clients, a category he already moved out of), then commits to one category once confirmed. **Failure modes:** it commits "you're cat J, recategorize" with no ratify (a silent six-category override → **Fail**); it refuses for missing inputs when all six are present (**Fail**); it hedges a menu "could be D or J, you decide" instead of asking to confirm the *input* (**Fail** — the ratify resolves an input, it never ducks the verdict). See `rules.md` Intake Gate § *Self-declared status vs computed*.
+
 ---
 
 ## Test 2: A different mode — it quantifies the RI question and refuses the casual "yes, jump"
@@ -180,6 +188,14 @@ Hola, soy freelance y facturo a clientes de afuera. ¿Me conviene pasarme a Resp
 Hi, soy freelance from Argentina, I bill foreign clients in dollars. Should I switch to Responsable Inscripto o me quedo en monotributo? Need a straight answer.
 ```
 
+**Bonus — watch the gate flip (the same question, completed).** The refusal isn't a wall; it's a threshold waiting on data — and you can watch it flip on a single question. The thin input above is the RI-or-monotributo question with its six structural inputs stripped out — the *same question* Martín asks in Test 2, minus the inputs. Add them back and the gate clears. Paste this and hold it against the refusal above:
+
+```
+Soy freelance y facturo a clientes de afuera, todo exportación (US + un par de Europa), Factura E siempre. Régimen actual: monotributo. En los últimos 12 meses facturé USD 72.000 y vengo en un run-rate de USD 7.000/mes, subiendo. IIBB CABA, export-services, exento. Tengo contador pero reactivo. ¿Me conviene pasarme a Responsable Inscripto o me quedo en monotributo?
+```
+
+Now four-of-six is satisfied (régimen, rolling-12, projection, %export + counterpart, IIBB, contador — all present), and the **same question that refused above resolves to a committed verdict**: rolling-12 **$102.960.000,00** (USD 72.000 × 1.430) → **cat K** at **95,0%** of the límite **$108.357.084,05** → 🔴 **ROJO**, the FX-driven exclusión named, the RI timing escalated to the contador (the full shape is Test 2's **TRANSITION** verdict). The refusal's `Trazabilidad` named **TRANSITION** as the mode that *would* apply — completed, it does. **Same words in, opposite outcome:** the only thing that changed is the inputs. That is the gate doing its one job — it computes when it can and refuses when it can't, and here you see it flip between the two on the same sentence.
+
 **What this demonstrates:** the refusal *is* the value. A guessed structural verdict costs a year of mis-categorization + multa + back-tax — far more than a clarifying question. It asks before it guesses, and the override still won't lift a safety escalation. See `examples.md` Example 5.
 
 **Failure modes to flag:**
@@ -203,7 +219,7 @@ Hi, soy freelance from Argentina, I bill foreign clients in dollars. Should I sw
 
 ## What to look for (mapped to the judging criteria)
 
-1. **Computes the trigger vs recites the table** — Test 1 settles it in one response (it commits to a category, a month, and a `cuota` delta, instead of reciting brackets and deferring); Test 5 guards the same line from the other side (it refuses to guess on thin data).
+1. **Computes the trigger vs recites the table** — Test 1 settles it in one response (it commits to a category, a month, and a `cuota` delta, instead of reciting brackets and deferring); Test 5 guards the same line from the other side (it refuses to guess on thin data); Test 1's ratify bonus guards a third edge — a self-declared status that contradicts the math gets named and ratified, never silently overridden; and Test 5's gate-flip bonus runs the *same* RI-or-monotributo question thin (refuses) and completed (resolves to the cat-K verdict), so the refusal reads as a threshold the inputs cross, not a reflex.
 2. **Domain-specific enough** — Tests 2, 3, and 4 show reasoning a generic tax tool can't fake: the monotributo-vs-RI cost model and the "never jump voluntarily under ~USD 140–150K" consensus (T2); the E-SICOL false positive and the BNA vendedor/comprador split (T3); the Ley 27.799 penal-threshold calibration and the Art. 38-vs-recat sanction distinction (T4). The domain spine is `reference/`.
 3. **Knows where its jurisdiction ends (escalation as a feature)** — Test 2's Nivel-2 RI escalation, Test 4's Nivel-2→3 tree, and the confidence tiers that never go HIGH on a complex choice. The escalation tree is `rules.md` § Escalation triggers, built on Rule 0.
 4. **README onboards a stranger** — the root `README.md` orients a freelancer in under two minutes; this guide gets a judge through in under five.
