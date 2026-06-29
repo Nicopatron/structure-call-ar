@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { TextureCard, TextureCardContent } from "@/components/ui/texture-card";
+import { VerdictForm } from "@/components/verdict-form";
 
 // The live runtime: paste a situation, the structure-call-ar specialist computes the
 // structural call server-side (a free general-purpose model with the full folder as its
@@ -24,6 +25,7 @@ Here's what's stressing me: I have a big project closing end of July, somewhere 
 ];
 
 export function VerdictDemo() {
+  const [mode, setMode] = useState<"ai" | "form">("ai");
   const [situation, setSituation] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<{ verdict: string; degraded: boolean } | null>(
@@ -61,6 +63,33 @@ export function VerdictDemo() {
 
   return (
     <div className="space-y-4">
+      <div className="flex gap-1">
+        <button
+          type="button"
+          onClick={() => setMode("ai")}
+          className={`text-xs font-mono px-3 py-1.5 rounded border transition-colors ${
+            mode === "ai"
+              ? "border-accent text-accent"
+              : "border-line text-mute hover:text-accent hover:border-accent"
+          }`}
+        >
+          Texto libre (AI)
+        </button>
+        <button
+          type="button"
+          onClick={() => setMode("form")}
+          className={`text-xs font-mono px-3 py-1.5 rounded border transition-colors ${
+            mode === "form"
+              ? "border-accent text-accent"
+              : "border-line text-mute hover:text-accent hover:border-accent"
+          }`}
+        >
+          Form exacto (determinista)
+        </button>
+      </div>
+
+      {mode === "ai" && (
+        <>
       <div className="flex flex-wrap gap-2">
         {SAMPLES.map((s) => (
           <button
@@ -133,6 +162,10 @@ export function VerdictDemo() {
           </TextureCard>
         </div>
       )}
+        </>
+      )}
+
+      {mode === "form" && <VerdictForm />}
     </div>
   );
 }
